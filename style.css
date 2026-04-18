@@ -649,6 +649,14 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   gap: 1.5rem;
 }
 
+.about-label {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
 .about-text {
   color: var(--text-secondary);
   font-size: 1.1rem;
