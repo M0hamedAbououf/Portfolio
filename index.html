@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUOUF - Digital Product Builder</title>
+    <meta name="description"
+        content="Mohamed Abououf - Communication and electronic engineer turned full-stack digital freelancer.">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+
+<body>
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- 1. NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="brand">ABOUOUF</a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <!-- Default to moon icon in HTML, JS will switch to sun for light mode -->
+                    <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                    </svg>
+                </button>
+                <a href="#contact" class="btn btn-primary">Contact Me &rarr;</a>
+            </div>
+            <button class="hamburger" aria-label="Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12" />
+                    <line x1="4" x2="20" y1="6" y2="6" />
+                    <line x1="4" x2="20" y1="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 2. HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="font-heading">I Build Digital Products That Work.</h1>
+                <p class="subline">Web &middot; Systems &middot; Automation &middot; UI/UX &middot; Shopify</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">Start a Project &rarr;</a>
+                    <a href="#work" class="btn btn-secondary">See My Work &darr;</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bottom fade-in">
+            <div class="hero-name">Mohamed Abououf</div>
+            <div class="availability">
+                <div class="dot"></div>
+                Available for projects
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. MARQUEE STRIP -->
+    <div class="marquee-wrapper">
+        <div class="marquee">
+            <span>Website Development &middot; System Design &middot; Automation &middot; UI/UX Design &middot; Shopify
+                Development &middot;</span>
+            <span>Website Development &middot; System Design &middot; Automation &middot; UI/UX Design &middot; Shopify
+                Development &middot;</span>
+            <span>Website Development &middot; System Design &middot; Automation &middot; UI/UX Design &middot; Shopify
+                Development &middot;</span>
+        </div>
+    </div>
+
+    <!-- 4. SERVICES SECTION -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title font-heading">What I Do</h2>
+                <p class="section-subtitle">Five areas. One expert.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <h3 class="font-heading">Website Development</h3>
+                    <p>Fast, modern, conversion-focused websites engineered for performance and scalability.</p>
+                    <div class="service-card-bottom">
+                        <span class="service-tag">01 /</span>
+                        <a href="#contact" class="service-link">Learn More &rarr;</a>
+                    </div>
+                </div>
+                <div class="service-card fade-in">
+                    <h3 class="font-heading">System Design</h3>
+                    <p>Scalable architecture that grows with you. Robust backends to support demanding applications.</p>
+                    <div class="service-card-bottom">
+                        <span class="service-tag">02 /</span>
+                        <a href="#contact" class="service-link">Learn More &rarr;</a>
+                    </div>
+                </div>
+                <div class="service-card fade-in">
+                    <h3 class="font-heading">Automation</h3>
+                    <p>Save time. Remove errors. Scale faster. Connecting tools via API to streamline workflows.</p>
+                    <div class="service-card-bottom">
+                        <span class="service-tag">03 /</span>
+                        <a href="#contact" class="service-link">Learn More &rarr;</a>
+                    </div>
+                </div>
+                <div class="service-card fade-in">
+                    <h3 class="font-heading">UI/UX Design</h3>
+                    <p>Interfaces people actually enjoy using. Minimalist, premium, and highly intuitive.</p>
+                    <div class="service-card-bottom">
+                        <span class="service-tag">04 /</span>
+                        <a href="#contact" class="service-link">Learn More &rarr;</a>
+                    </div>
+                </div>
+                <div class="service-card fade-in">
+                    <h3 class="font-heading">Shopify Development</h3>
+                    <p>Stores built to sell. Custom themes and functional integrations that drive revenue.</p>
+                    <div class="service-card-bottom">
+                        <span class="service-tag">05 /</span>
+                        <a href="#contact" class="service-link">Learn More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. WORK SECTION -->
+    <section class="section" id="work">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title font-heading">Selected Work</h2>
+                <p class="section-subtitle">Real projects. Real results.</p>
+            </div>
+
+            <div class="work-filters fade-in">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="website">Website</button>
+                <button class="filter-btn" data-filter="system">System</button>
+                <button class="filter-btn" data-filter="automation">Automation</button>
+                <button class="filter-btn" data-filter="ui-ux">UI/UX</button>
+                <button class="filter-btn" data-filter="shopify">Shopify</button>
+            </div>
+
+            <div class="work-grid" id="workGrid">
+                <!-- Website Project (using generated image) -->
+                <div class="project-card fade-in" data-category="website">
+                    <img src="assets/website.png" alt="Premium Website Platform">
+                    <div class="project-overlay">
+                        <span class="project-tag">Website</span>
+                        <h3 class="project-title font-heading">Digital Experiences</h3>
+                        <div class="project-actions">
+                            <a href="project-website.html" class="btn btn-primary">Get Started &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Project (using generated image) -->
+                <div class="project-card fade-in" data-category="system">
+                    <img src="assets/system.png" alt="Backend System Details">
+                    <div class="project-overlay">
+                        <span class="project-tag">System</span>
+                        <h3 class="project-title font-heading">Advanced Dashboard</h3>
+                        <div class="project-actions">
+                            <a href="project-system.html" class="btn btn-primary">Get Started &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shopify Project -->
+                <div class="project-card fade-in" data-category="shopify">
+                    <img src="assets/shopify.png" alt="Shopify E-Commerce"
+                        onerror="this.src='https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80'">
+                    <div class="project-overlay">
+                        <span class="project-tag">Shopify</span>
+                        <h3 class="project-title font-heading">Premium Stores</h3>
+                        <div class="project-actions">
+                            <a href="project-shopify.html" class="btn btn-primary">Get Started &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- API/Automation Project (Using uploaded video) -->
+                <div class="project-card fade-in" data-category="automation">
+                    <video src="assets/Video_for_perfume_202604120004.mp4" autoplay loop muted playsinline
+                        style="width: 100%; height: 100%; object-fit: cover;"></video>
+                    <div class="project-overlay">
+                        <span class="project-tag">Automation</span>
+                        <h3 class="project-title font-heading">Workflow API</h3>
+                        <div class="project-actions">
+                            <a href="project-automation.html" class="btn btn-primary">Get Started &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UI/UX Project -->
+                <div class="project-card fade-in" data-category="ui-ux">
+                    <img src="assets/PROMPT__Premium_cinematic_202604120742.png" alt="UI Design System"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="project-overlay">
+                        <span class="project-tag">UI/UX</span>
+                        <h3 class="project-title font-heading">Studio View</h3>
+                        <div class="project-actions">
+                            <a href="project-ui-ux.html" class="btn btn-primary">Get Started &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. PROCESS SECTION -->
+    <section class="section" id="process">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title font-heading">How I Work</h2>
+                <p class="section-subtitle">Simple. Transparent. Delivered.</p>
+            </div>
+            <div class="process-row fade-in">
+                <div class="process-line"></div>
+
+                <div class="process-step">
+                    <div class="process-num">01</div>
+                    <h4 class="font-heading">Discover</h4>
+                    <p>We define goals, scope, and timeline to ensure perfect alignment.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-num">02</div>
+                    <h4 class="font-heading">Design</h4>
+                    <p>Wireframes, prototypes, and a visual interface ready for your approval.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-num">03</div>
+                    <h4 class="font-heading">Build</h4>
+                    <p>Clean code. Precise execution. Engineered for performance.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-num">04</div>
+                    <h4 class="font-heading">Launch</h4>
+                    <p>Deployed, thoroughly tested, optimized, and ready to scale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. ABOUT SECTION -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-left fade-in">
+                    <h2 class="about-headline font-heading">Engineer by training.<br>Builder by passion.</h2>
+                    <div class="about-actions">
+                        <a href="#" class="btn btn-ghost" style="pointer-events: none; cursor: default;">My Story
+                            &rarr;</a>
+                    </div>
+                </div>
+                <div class="about-right fade-in">
+                    <div class="about-image-wrapper">
+                        <!-- Referencing the user's uploaded profile picture -->
+                        <img src="assets/photo_2025-08-24_22-28-531.jpg" alt="Mohamed Abououf" class="about-image">
+                    </div>
+                    <p class="about-text" id="my-story">
+                        I'm Mohamed, a communication and electronic engineer with a deep passion for building
+                        high-performance digital products. From complex backend systems to pixel-perfect interfaces, I
+                        bring technical precision and creative thinking to every project.
+                    </p>
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-val">20+</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-val">5</div>
+                            <div class="stat-label">Services</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-val">100%</div>
+                            <div class="stat-label">Remote</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. TESTIMONIALS SECTION -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title font-heading">What Clients Say</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">&ldquo;</div>
+                    <p class="testimonial-text">"Mohamed transformed our outdated system into a modern, lightning-fast
+                        platform. His technical skills and attention to detail are unmatched."</p>
+                    <div class="client-info">
+                        <div class="client-name">Ahmed Mansour</div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">&ldquo;</div>
+                    <p class="testimonial-text">"The Shopify store he built for us doubled our conversion rate in the
+                        first month. He understands both design and business."</p>
+                    <div class="client-info">
+                        <div class="client-name">David Chen</div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">&ldquo;</div>
+                    <p class="testimonial-text">"Reliable, responsive, and incredibly talented. He took our complex
+                        automation requirements and made them look simple."</p>
+                    <div class="client-info">
+                        <div class="client-name">Fatima Al-Rashid</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. CONTACT SECTION -->
+    <section class="section contact-section fade-in" id="contact">
+        <div class="container">
+            <h2 class="contact-title font-heading">Ready to build something?</h2>
+            <p class="contact-subtitle">Let's talk about your project.</p>
+            <div class="contact-actions">
+                <a href="mailto:mohabououf@gmail.com" class="btn btn-primary"
+                    style="padding: 1rem 2.5rem; font-size: 1.1rem;">Get in Touch &rarr;</a>
+                <a href="https://wa.me/201017671216" class="btn btn-secondary"
+                    style="padding: 1rem 2.5rem; font-size: 1.1rem;" target="_blank">Book a Call
+                    &rarr;</a>
+            </div>
+            <div class="contact-details">
+                <a href="mailto:mohabououf@gmail.com" class="contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect width="20" height="16" x="2" y="4" rx="2" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>
+                    Email
+                </a>
+                <a href="https://wa.me/201017671216" class="contact-item" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    WhatsApp
+                </a>
+                <a href="https://www.linkedin.com/in/mohamed-abou-ouf" class="contact-item" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect width="4" height="12" x="2" y="9" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/M0hamedAbououf" class="contact-item" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                        <path d="M9 18c-4.51 2-5-2-7-2" />
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="brand">ABOUOUF</div>
+                <div class="footer-nav">
+                    <a href="#services">Services</a>
+                    <a href="#work">Work</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-credits">Designed & built by Mohamed Abououf</div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 ABOUOUF All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

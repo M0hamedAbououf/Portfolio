@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Dashboard - Project by ABOUOUF</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .project-hero {
+            padding-top: 120px;
+            padding-bottom: 4rem;
+        }
+        .project-hero img {
+            width: 100%;
+            height: auto;
+            max-height: 70vh;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--accent);
+            margin-bottom: 3rem;
+        }
+        .project-details {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .project-details p {
+            line-height: 1.8;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+            margin-bottom: 2rem;
+            transition: color 0.3s;
+        }
+        .back-link:hover {
+            color: var(--accent);
+        }
+    </style>
+    <script>
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body>
+    <div class="custom-cursor" id="cursor"></div>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">ABOUOUF</a>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="section project-hero">
+        <div class="container">
+            <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+            <img src="assets/PROMPT__Cinematic_3D_202604112237.png" alt="Advanced Dashboard">
+            
+            <div class="project-details fade-in">
+                <h1 class="font-heading" style="font-size: 4rem; margin-bottom: 1rem;">Advanced Dashboard</h1>
+                <p>System Design</p>
+                <hr style="border-color: var(--border); margin: 2rem 0;">
+                <p>Behind every great digital product is a robust and reliable system. This dashboard was architected to make managing complex, high-volume data feel completely effortless. By focusing heavily on intuitive design, administrators are able to see the full picture and take quick actions without getting overwhelmed by technical clutter.</p>
+                <p>At its core, this ecosystem was engineered exactly for performance and scalability. I structured the back-end logic to reliably handle heavy workloads and sudden spikes in traffic gracefully, ensuring that operations run seamlessly day in and day out.</p>
+                
+                <div style="margin-top: 4rem;">
+                    <a href="index.html#contact" class="btn btn-primary">Start a similar project &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="brand">ABOUOUF</div>
+                <div class="footer-credits">Designed & built by Mohamed Abououf</div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 ABOUOUF All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
