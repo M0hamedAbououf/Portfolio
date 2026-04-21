@@ -670,34 +670,22 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   margin-bottom: 2rem;
   border-radius: 16px;
   overflow: hidden;
-  aspect-ratio: 1/1;
-  max-width: 300px;
+  aspect-ratio: 3/4;
+  max-width: 280px;
   border: 1px solid var(--border);
-  /* Light mode: clean warm background */
   background: var(--bg-secondary);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  position: relative;
 }
 
-/* Dark mode: rim-light radial gradient effect */
 [data-theme='dark'] .about-image-wrapper {
-  background: radial-gradient(ellipse at bottom, #ba957c22 0%, #2a1f18 40%, #1a1a1a 100%);
-  border-color: #ba957c33;
-  box-shadow: 0 0 40px #ba957c18, inset 0 -20px 40px #ba957c15;
-}
-
-/* Light mode: soft warm tone */
-[data-theme='light'] .about-image-wrapper {
-  background: linear-gradient(160deg, var(--bg-secondary) 60%, #e8ddd5 100%);
+  border-color: #ba957c44;
+  box-shadow: 0 8px 32px rgba(186,149,124,0.12);
 }
 
 .about-image {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: bottom center;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .stats-row {
