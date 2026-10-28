@@ -84,17 +84,19 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/work/[s
 
       <div className="case-body">
         <section className="reveal">
-          <h2>{t.need}</h2>
+          <h2>{project.needTitle?.[lang] ?? t.need}</h2>
           <p>{project.need[lang]}</p>
         </section>
-        <section className="reveal">
-          <h2>{t.delivered}</h2>
-          <ul className="case-list">
-            {project.delivered.map((item) => (
-              <li key={item.en}>{item[lang]}</li>
-            ))}
-          </ul>
-        </section>
+        {(project.parts ?? [{ title: { en: t.delivered, ar: t.delivered }, items: project.delivered }]).map((part) => (
+          <section key={part.title.en} className="reveal">
+            <h2>{part.title[lang]}</h2>
+            <ul className="case-list">
+              {part.items.map((item) => (
+                <li key={item.en}>{item[lang]}</li>
+              ))}
+            </ul>
+          </section>
+        ))}
         {project.engineering.length > 0 ? (
           <section className="reveal">
             <h2>{t.engineering}</h2>
@@ -125,8 +127,14 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/work/[s
       ) : null}
 
       <Link href={`/${lang}/work/${next.slug}`} className="case-next reveal">
-        <span>{t.next}</span>
-        <strong>{next.name[lang]}</strong>
+        <div className="case-next-text">
+          <span>{t.next}</span>
+          <strong>{next.name[lang]}</strong>
+          <p>{next.summary[lang]}</p>
+        </div>
+        <div className="case-next-media">
+          <Image src={next.shots[0].src} alt="" width={next.shots[0].width} height={next.shots[0].height} sizes="(max-width: 900px) 100vw, 420px" />
+        </div>
       </Link>
     </article>
   );

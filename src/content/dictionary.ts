@@ -21,39 +21,27 @@ const en = {
   hero: {
     role: "Communications engineer, co-founder of Coretex",
     title: "Websites, stores and booking systems that bring in customers.",
-    lead: "I'm Mohamed. With Coretex, our studio in Cairo, I design, build and run complete systems for growing businesses, in Arabic and English.",
+    lead: "I'm Mohamed, a communications engineer from Port Said. I design and build websites, online stores and booking systems for growing businesses, in Arabic and English.",
     primary: "Message me on Instagram",
     secondary: "LinkedIn",
     proof: [
       { value: "+150%", label: "conversion, Arab Collective" },
-      { value: "6", label: "projects shown here" },
+      { value: "7", label: "projects shown here" },
       { value: "EN / ع", label: "every build bilingual" },
     ],
     portraitAlt: "Mohamed Abououf",
   },
   work: {
     title: "Selected work",
-    intro: "Client work delivered with Coretex, plus the projects I build to learn.",
-    kind: { client: "Coretex client", personal: "Personal project", university: "University project" },
+    intro: "Client work, the studio I co-founded, and the projects I build to learn.",
+    kind: { client: "Client project", company: "My company, co-founder", personal: "Personal project", university: "University project" },
     open: "View project",
-  },
-  coretex: {
-    title: "Coretex",
-    lead: "Coretex is a tech studio in Cairo run by four people as one team. The people you talk to are the people who build it, from the first call to a live system.",
-    pillars: [
-      { name: "Build", text: "Websites, web apps and SaaS products that load fast and convert." },
-      { name: "Commerce", text: "Shopify themes, custom apps and conversion work that turn traffic into orders." },
-      { name: "Automate", text: "WhatsApp, email and CRM workflows that follow up for you." },
-      { name: "Grow", text: "AI assistants, analytics and experiments that improve every month." },
-    ],
-    site: "Visit the Coretex site",
-    instagram: "Coretex on Instagram",
   },
   about: {
     title: "About",
     bio: [
       "I'm a communications and electronics engineer from Port Said. I studied how signals and networks carry information, and now I use the same thinking to build websites and systems that carry a business.",
-      "Before co-founding Coretex I worked in information security and network engineering, which is why the things we ship are tested, secure and built to keep running.",
+      "I graduated in 2026 and co-founded Coretex, a small tech studio in Port Said. My background in information security and network engineering is why the things I ship are tested, secure and built to keep running.",
     ],
     timelineTitle: "Experience",
     timeline: [
@@ -63,7 +51,7 @@ const en = {
       { when: "2023–24", what: "Programming competitions", where: "ACPC and IEEE", note: "Algorithmic problem solving in teams." },
     ],
     educationTitle: "Education",
-    education: "B.Eng. Communications and Electronics, Port Said University, 2021 to present. Grade: Very Good.",
+    education: "B.Eng. Communications and Electronics, Port Said University, 2021 to 2026. Grade: Very Good.",
     skillsTitle: "Skills",
     skills: [
       { group: "Web", items: ["Next.js", "React", "TypeScript", "Shopify", "WordPress", "Supabase"] },
@@ -120,39 +108,27 @@ const ar: Dictionary = {
   hero: {
     role: "مهندس اتصالات وشريك مؤسس في Coretex",
     title: "مواقع ومتاجر وأنظمة حجز تجلب لك العملاء.",
-    lead: "أنا محمد. مع Coretex، استوديو التقنية الخاص بنا في القاهرة، أصمم وأبني وأدير أنظمة متكاملة للشركات النامية، بالعربية والإنجليزية.",
+    lead: "أنا محمد، مهندس اتصالات من بورسعيد. أصمم وأبني المواقع والمتاجر الإلكترونية وأنظمة الحجز للشركات النامية، بالعربية والإنجليزية.",
     primary: "راسلني على إنستجرام",
     secondary: "لينكدإن",
     proof: [
       { value: "‎+150%", label: "معدل تحويل، Arab Collective" },
-      { value: "6", label: "مشاريع معروضة هنا" },
+      { value: "7", label: "مشاريع معروضة هنا" },
       { value: "ع / EN", label: "كل مشروع بلغتين" },
     ],
     portraitAlt: "محمد أبو عوف",
   },
   work: {
     title: "أعمال مختارة",
-    intro: "أعمال لعملاء نفذناها مع Coretex، ومشاريع أبنيها لأتعلم.",
-    kind: { client: "عميل Coretex", personal: "مشروع شخصي", university: "مشروع جامعي" },
+    intro: "أعمال لعملاء، والاستوديو الذي شاركت في تأسيسه، ومشاريع أبنيها لأتعلم.",
+    kind: { client: "مشروع لعميل", company: "شركتي، شريك مؤسس", personal: "مشروع شخصي", university: "مشروع جامعي" },
     open: "عرض المشروع",
-  },
-  coretex: {
-    title: "Coretex",
-    lead: "Coretex استوديو تقنية في القاهرة يديره أربعة أشخاص كفريق واحد. من تتحدث معهم هم من يبنون مشروعك، من أول مكالمة حتى يعمل النظام.",
-    pillars: [
-      { name: "البناء", text: "مواقع وتطبيقات ويب ومنتجات SaaS سريعة التحميل وتحقق المبيعات." },
-      { name: "التجارة", text: "قوالب Shopify وتطبيقات مخصصة وتحسين للتحويل يحوّل الزيارات إلى طلبات." },
-      { name: "الأتمتة", text: "مسارات واتساب وبريد وCRM تتابع العملاء نيابة عنك." },
-      { name: "النمو", text: "مساعدات ذكاء اصطناعي وتحليلات وتجارب تتحسن كل شهر." },
-    ],
-    site: "زر موقع Coretex",
-    instagram: "Coretex على إنستجرام",
   },
   about: {
     title: "نبذة",
     bio: [
       "أنا مهندس اتصالات وإلكترونيات من بورسعيد. درست كيف تنقل الإشارات والشبكات المعلومات، وأستخدم اليوم نفس طريقة التفكير لبناء مواقع وأنظمة تحمل أعمال عملائي.",
-      "قبل تأسيس Coretex عملت في أمن المعلومات وهندسة الشبكات، ولهذا ما نسلّمه مختبَر وآمن ومبني ليستمر في العمل.",
+      "تخرجت عام 2026 وشاركت في تأسيس Coretex، استوديو تقنية صغير في بورسعيد. خلفيتي في أمن المعلومات وهندسة الشبكات هي سبب أن ما أسلّمه مختبَر وآمن ومبني ليستمر في العمل.",
     ],
     timelineTitle: "الخبرة",
     timeline: [
@@ -162,7 +138,7 @@ const ar: Dictionary = {
       { when: "2023–24", what: "مسابقات البرمجة", where: "ACPC وIEEE", note: "حل المسائل الخوارزمية ضمن فريق." },
     ],
     educationTitle: "التعليم",
-    education: "بكالوريوس هندسة الاتصالات والإلكترونيات، جامعة بورسعيد، من 2021 حتى الآن. التقدير: جيد جداً.",
+    education: "بكالوريوس هندسة الاتصالات والإلكترونيات، جامعة بورسعيد، 2021 إلى 2026. التقدير: جيد جداً.",
     skillsTitle: "المهارات",
     skills: [
       { group: "الويب", items: ["Next.js", "React", "TypeScript", "Shopify", "WordPress", "Supabase"] },

@@ -14,7 +14,7 @@ export function Header({ lang, dict }: { lang: Locale; dict: Dictionary }) {
         </Link>
         <nav aria-label="Main" className="nav-links">
           <Link href={`${home}#work`}>{dict.nav.work}</Link>
-          <Link href={`${home}#coretex`}>{dict.nav.coretex}</Link>
+          <Link href={`${home}/work/coretex`}>{dict.nav.coretex}</Link>
           <Link href={`${home}#about`}>{dict.nav.about}</Link>
           <Link href={`${home}#contact`}>{dict.nav.contact}</Link>
         </nav>

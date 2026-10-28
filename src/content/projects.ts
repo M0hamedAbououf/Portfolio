@@ -2,7 +2,7 @@ import type { Locale } from "./locales";
 
 type Text = Record<Locale, string>;
 
-export type ProjectKind = "client" | "personal" | "university";
+export type ProjectKind = "client" | "company" | "personal" | "university";
 
 export interface Shot {
   src: string;
@@ -10,6 +10,12 @@ export interface Shot {
   height: number;
   alt: Text;
   phone?: boolean;
+}
+
+/** A titled group of delivered work, used when one project had separate parts. */
+export interface Part {
+  title: Text;
+  items: Text[];
 }
 
 export interface Project {
@@ -22,8 +28,12 @@ export interface Project {
   live?: { url: string; label: string };
   status?: Text;
   stack: string[];
+  /** Replaces the default "What they needed" heading. */
+  needTitle?: Text;
   need: Text;
   delivered: Text[];
+  /** When set, shown instead of `delivered`, one column per part. */
+  parts?: Part[];
   engineering: Text[];
   results?: { value: string; label: Text }[];
   shots: Shot[];
@@ -36,31 +46,71 @@ export const projects: Project[] = [
     kind: "client",
     year: "2026",
     summary: {
-      en: "Arab-heritage streetwear store on Shopify with a Design Studio where customers create their own piece.",
-      ar: "متجر ملابس مستوحاة من التراث العربي على Shopify، مع استوديو تصميم يتيح للعملاء تصميم قطعتهم بأنفسهم.",
+      en: "An influencer CRM that sends PR gifts straight from Shopify stock, and a Shopify store with a Design Studio where customers create their own piece.",
+      ar: "نظام CRM للمؤثرين يرسل الهدايا مباشرة من مخزون Shopify، ومتجر Shopify باستوديو تصميم يتيح للعملاء تصميم قطعتهم بأنفسهم.",
     },
     highlight: { en: "+150% conversion", ar: "‎+150% تحويل" },
     live: { url: "https://arabcollective.com", label: "arabcollective.com" },
-    stack: ["Shopify", "Design Studio"],
+    stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase", "Shopify Admin API", "Shopify"],
     need: {
-      en: "An Arab-heritage streetwear brand selling worldwide needed a store that turns visits into orders, in English and Arabic, and a way for customers to design their own pieces.",
-      ar: "علامة ملابس مستوحاة من التراث العربي تبيع حول العالم احتاجت متجراً يحوّل الزيارات إلى طلبات، بالعربية والإنجليزية، وطريقة تتيح للعملاء تصميم قطعهم بأنفسهم.",
+      en: "Arab Collective, an Arab-heritage streetwear brand selling worldwide, needed two things: one place to manage its influencers and send them PR gifts straight from store stock, and a store that turns visits into orders in English and Arabic.",
+      ar: "احتاجت Arab Collective، علامة ملابس مستوحاة من التراث العربي تبيع حول العالم، شيئين: مكاناً واحداً لإدارة المؤثرين وإرسال هدايا لهم مباشرة من مخزون المتجر، ومتجراً يحوّل الزيارات إلى طلبات بالعربية والإنجليزية.",
     },
-    delivered: [
+    delivered: [],
+    parts: [
       {
-        en: "A conversion-focused Shopify store, built to sell from the first visit.",
-        ar: "متجر Shopify مصمم لرفع معدل التحويل، ليبيع من أول زيارة.",
+        title: { en: "The influencer CRM I built", ar: "نظام CRM للمؤثرين الذي بنيته" },
+        items: [
+          {
+            en: "A roster of influencers across the Gulf, the Levant and North Africa, with their campaigns and results: revenue, clicks and return on spend.",
+            ar: "قائمة بالمؤثرين في الخليج والشام وشمال أفريقيا، مع حملاتهم ونتائجهم: الإيرادات والنقرات والعائد على الإنفاق.",
+          },
+          {
+            en: "A gift box builder that pulls live stock from the Shopify store by collection. Pick the items and sizes, and the gift goes out as a free Shopify draft order.",
+            ar: "أداة لتجهيز صندوق الهدايا تسحب المخزون الحي من متجر Shopify حسب المجموعة. اختر القطع والمقاسات، فتُرسل الهدية كطلب مسودة مجاني في Shopify.",
+          },
+          {
+            en: "Delivery address and phone fill in from the database, and any correction can be saved back to the influencer's profile.",
+            ar: "يُملأ عنوان التوصيل والهاتف تلقائياً من قاعدة البيانات، ويمكن حفظ أي تعديل في ملف المؤثر.",
+          },
+          {
+            en: "Every gift is logged, and the dashboard shows a live feed of gifts sent with the courier and delivery status.",
+            ar: "تُسجَّل كل هدية، وتعرض لوحة التحكم سجلاً حياً بالهدايا المرسلة مع شركة الشحن وحالة التوصيل.",
+          },
+        ],
       },
       {
-        en: "A five-step Design Studio: pick the item, choose colour and size, place the print, add the design, then review.",
-        ar: "استوديو تصميم من خمس خطوات: اختيار القطعة، ثم اللون والمقاس، ثم مكان الطباعة، ثم إضافة التصميم، ثم المراجعة.",
-      },
-      {
-        en: "English and Arabic storefront with language and currency selectors for customers abroad.",
-        ar: "واجهة متجر بالعربية والإنجليزية مع اختيار اللغة والعملة للعملاء خارج مصر.",
+        title: { en: "What we did on the Shopify store", ar: "ما قدمناه في متجر Shopify" },
+        items: [
+          {
+            en: "A conversion-focused Shopify store, built to sell from the first visit.",
+            ar: "متجر Shopify مصمم لرفع معدل التحويل، ليبيع من أول زيارة.",
+          },
+          {
+            en: "A five-step Design Studio: pick the item, choose colour and size, place the print, add the design, then review.",
+            ar: "استوديو تصميم من خمس خطوات: اختيار القطعة، ثم اللون والمقاس، ثم مكان الطباعة، ثم إضافة التصميم، ثم المراجعة.",
+          },
+          {
+            en: "English and Arabic storefront with language and currency selectors for customers abroad.",
+            ar: "واجهة متجر بالعربية والإنجليزية مع اختيار اللغة والعملة للعملاء خارج مصر.",
+          },
+        ],
       },
     ],
-    engineering: [],
+    engineering: [
+      {
+        en: "The CRM is built for catalogues of 500+ products: collections load first, products load on demand and stay cached, and one search covers the whole store.",
+        ar: "النظام مبني لكتالوجات تتجاوز 500 منتج: تُحمَّل المجموعات أولاً، ثم المنتجات عند الطلب وتبقى محفوظة، مع بحث واحد يغطي المتجر كله.",
+      },
+      {
+        en: "Gifts are private draft orders, so they never appear on the public store.",
+        ar: "الهدايا طلبات مسودة خاصة، فلا تظهر أبداً في المتجر العام.",
+      },
+      {
+        en: "Cleared Shopify's protected customer data review so gift orders can carry delivery details.",
+        ar: "اجتزت مراجعة Shopify لبيانات العملاء المحمية لتحمل طلبات الهدايا بيانات التوصيل.",
+      },
+    ],
     results: [
       { value: "+150%", label: { en: "conversion rate", ar: "معدل التحويل" } },
       { value: "+147.5%", label: { en: "add-to-cart rate", ar: "معدل الإضافة إلى السلة" } },
@@ -70,6 +120,79 @@ export const projects: Project[] = [
       { src: "/work/arab-collective/home.jpg", width: 1440, height: 900, alt: { en: "Arab Collective home page", ar: "الصفحة الرئيسية لمتجر Arab Collective" } },
       { src: "/work/arab-collective/design-studio.jpg", width: 1440, height: 900, alt: { en: "The Design Studio, step one: choose the item", ar: "استوديو التصميم، الخطوة الأولى: اختيار القطعة" } },
       { src: "/work/arab-collective/home-mobile.jpg", width: 600, height: 1022, alt: { en: "The store on a phone", ar: "المتجر على الهاتف" }, phone: true },
+    ],
+  },
+  {
+    slug: "coretex",
+    name: { en: "Coretex", ar: "Coretex" },
+    kind: "company",
+    year: "2026",
+    summary: {
+      en: "The tech studio I co-founded in Port Said with three partners: booking systems, online stores, web apps, CRM and AI automations.",
+      ar: "استوديو التقنية الذي شاركت في تأسيسه في بورسعيد مع ثلاثة شركاء: أنظمة حجز ومتاجر إلكترونية وتطبيقات ويب وأنظمة CRM وأتمتة بالذكاء الاصطناعي.",
+    },
+    highlight: { en: "Co-founder", ar: "شريك مؤسس" },
+    live: { url: "https://coretex-tech.vercel.app/", label: "coretex-tech.vercel.app" },
+    stack: ["Next.js", "React", "GSAP", "Supabase", "Shopify", "n8n"],
+    needTitle: { en: "Why I co-founded it", ar: "لماذا شاركت في تأسيسها" },
+    need: {
+      en: "I'm one of Coretex's four co-founders. We started it so a growing business can get the whole system from one team, where the people you talk to are the people who build it.",
+      ar: "أنا واحد من أربعة شركاء مؤسسين لـ Coretex. أسسناها ليحصل أي عمل نامٍ على النظام كاملاً من فريق واحد، يكون فيه من تتحدث معهم هم من يبنون مشروعك.",
+    },
+    delivered: [],
+    parts: [
+      {
+        title: { en: "What we provide", ar: "ما نقدمه" },
+        items: [
+          {
+            en: "Build: websites, web apps and SaaS products that load fast and convert.",
+            ar: "البناء: مواقع وتطبيقات ويب ومنتجات SaaS سريعة التحميل وتحقق المبيعات.",
+          },
+          {
+            en: "Commerce: Shopify themes, custom apps and conversion work that turn traffic into orders.",
+            ar: "التجارة: قوالب Shopify وتطبيقات مخصصة وتحسين للتحويل يحوّل الزيارات إلى طلبات.",
+          },
+          {
+            en: "Automate: WhatsApp, email and CRM workflows that follow up with customers for you.",
+            ar: "الأتمتة: مسارات واتساب وبريد وCRM تتابع العملاء نيابة عنك.",
+          },
+          {
+            en: "Grow: AI assistants, analytics and experiments that improve every month.",
+            ar: "النمو: مساعدات ذكاء اصطناعي وتحليلات وتجارب تتحسن كل شهر.",
+          },
+        ],
+      },
+      {
+        title: { en: "How a build runs", ar: "كيف ننفذ المشروع" },
+        items: [
+          {
+            en: "A free fit call, then a clear plan with a fixed scope and one quick win live in the first week.",
+            ar: "مكالمة تعارف مجانية، ثم خطة واضحة بنطاق محدد ونتيجة سريعة تعمل في الأسبوع الأول.",
+          },
+          {
+            en: "Weekly demos on real links during the build, so the client sees progress instead of status reports.",
+            ar: "عروض أسبوعية على روابط حقيقية أثناء التنفيذ، ليرى العميل التقدم بدلاً من التقارير.",
+          },
+          {
+            en: "Launch, then 30 days of care: we measure, fix what the data shows and train the team.",
+            ar: "الإطلاق، ثم ثلاثون يوماً من المتابعة: نقيس ونصلح ما تكشفه البيانات وندرّب الفريق.",
+          },
+        ],
+      },
+    ],
+    engineering: [
+      {
+        en: "The Coretex site itself is bilingual with real Arabic right-to-left, light and dark themes and an animated 3D mark.",
+        ar: "موقع Coretex نفسه ثنائي اللغة بعربية حقيقية من اليمين لليسار، مع وضعين فاتح وداكن وشعار ثلاثي الأبعاد متحرك.",
+      },
+      {
+        en: "Coretex OS, our own internal platform for leads, tasks, content and performance, with role-based access and live updates.",
+        ar: "Coretex OS، منصتنا الداخلية لإدارة العملاء المحتملين والمهام والمحتوى والأداء، بصلاحيات حسب الدور وتحديثات لحظية.",
+      },
+    ],
+    shots: [
+      { src: "/work/coretex/home.jpg", width: 1440, height: 900, alt: { en: "The Coretex website", ar: "موقع Coretex" } },
+      { src: "/work/coretex/home-mobile.jpg", width: 600, height: 1022, alt: { en: "Coretex on a phone", ar: "Coretex على الهاتف" }, phone: true },
     ],
   },
   {

@@ -10,10 +10,10 @@ function subscribe(onChange: () => void) {
   return () => observer.disconnect();
 }
 
-const read = (): Theme => (document.documentElement.dataset.theme === "light" ? "light" : "dark");
+const read = (): Theme => (document.documentElement.dataset.theme === "dark" ? "dark" : "light");
 
 export function ThemeToggle({ labels }: { labels: { light: string; dark: string } }) {
-  const theme = useSyncExternalStore(subscribe, read, () => "dark" as Theme);
+  const theme = useSyncExternalStore(subscribe, read, () => "light" as Theme);
   const next: Theme = theme === "dark" ? "light" : "dark";
 
   return (

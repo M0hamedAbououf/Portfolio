@@ -15,7 +15,7 @@ const kufi = Noto_Kufi_Arabic({ subsets: ["arabic"], weight: ["400", "500", "600
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 // Runs before paint so the saved theme never flashes the wrong one.
-const themeScript = `(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');d.dataset.theme=t==='light'?'light':'dark'}catch(e){}})()`;
+const themeScript = `(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');d.dataset.theme=t==='dark'?'dark':'light'}catch(e){}})()`;
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -57,7 +57,7 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
     <html
       lang={lang}
       dir={dirOf(lang)}
-      data-theme="dark"
+      data-theme="light"
       className={`${oswald.variable} ${inter.variable} ${kufi.variable}`}
       suppressHydrationWarning
     >

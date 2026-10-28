@@ -12,12 +12,12 @@ function subscribeTheme(onChange: () => void) {
   return () => observer.disconnect();
 }
 
-const readAccent = () => getComputedStyle(document.documentElement).getPropertyValue("--ring").trim() || "#BA957C";
+const readAccent = () => getComputedStyle(document.documentElement).getPropertyValue("--ring").trim() || "#D7B79C";
 
 function Rings({ still }: { still: boolean }) {
   const outer = useRef<Mesh>(null);
   const inner = useRef<Mesh>(null);
-  const accent = useSyncExternalStore(subscribeTheme, readAccent, () => "#BA957C");
+  const accent = useSyncExternalStore(subscribeTheme, readAccent, () => "#D7B79C");
 
   useFrame(({ clock }) => {
     const t = still ? 0 : clock.elapsedTime;

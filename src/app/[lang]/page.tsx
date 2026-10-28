@@ -82,31 +82,6 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         </div>
       </section>
 
-      <section id="coretex" className="section coretex" aria-labelledby="coretex-title">
-        <div className="wrap coretex-inner">
-          <div className="coretex-copy reveal">
-            <h2 id="coretex-title">{dict.coretex.title}</h2>
-            <p>{dict.coretex.lead}</p>
-            <div className="hero-actions">
-              <a className="btn btn-primary" href={links.coretex} target="_blank" rel="noopener noreferrer">
-                {dict.coretex.site}
-              </a>
-              <a className="btn" href={links.instagram} target="_blank" rel="noopener noreferrer">
-                {dict.coretex.instagram}
-              </a>
-            </div>
-          </div>
-          <ul className="pillars">
-            {dict.coretex.pillars.map((pillar) => (
-              <li key={pillar.name} className="reveal">
-                <h3>{pillar.name}</h3>
-                <p>{pillar.text}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       <section id="about" className="section wrap about" aria-labelledby="about-title">
         <div className="about-bio reveal">
           <h2 id="about-title">{dict.about.title}</h2>
@@ -163,7 +138,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           <ul className="direct-links">
             <li>
               <a href={links.instagram} target="_blank" rel="noopener noreferrer">
-                Instagram <span dir="ltr">@coretex.agency</span>
+                Instagram <span dir="ltr">@{links.instagram.split("/").filter(Boolean).pop()}</span>
               </a>
             </li>
             <li>
