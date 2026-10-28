@@ -2,10 +2,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ContactForm } from "@/components/ContactForm";
+import { ContactIcon, type ContactIconName } from "@/components/ContactIcon";
 import { HeroArt } from "@/components/HeroArt";
 import { getDictionary, links } from "@/content/dictionary";
 import { isLocale } from "@/content/locales";
 import { projects } from "@/content/projects";
+
+const handle = (url: string) => `@${url.split("/").filter(Boolean).pop()}`;
+
+const directLinks: { icon: ContactIconName; label: string; value: string; href: string }[] = [
+  { icon: "instagram", label: "Instagram", value: handle(links.instagram), href: links.instagram },
+  { icon: "linkedin", label: "LinkedIn", value: "mohamed-abou-ouf", href: links.linkedin },
+  { icon: "whatsapp", label: "WhatsApp", value: "+20 101 767 0216", href: links.whatsapp },
+  { icon: "email", label: "Email", value: links.email, href: `mailto:${links.email}` },
+  { icon: "github", label: "GitHub", value: "M0hamedAbououf", href: links.github },
+];
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
@@ -155,26 +166,19 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           <p>{dict.contact.lead}</p>
           <h3>{dict.contact.direct}</h3>
           <ul className="direct-links">
-            <li>
-              <a href={links.instagram} target="_blank" rel="noopener noreferrer">
-                Instagram <span dir="ltr">@{links.instagram.split("/").filter(Boolean).pop()}</span>
-              </a>
-            </li>
-            <li>
-              <a href={links.linkedin} target="_blank" rel="noopener noreferrer">
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a href={links.whatsapp} target="_blank" rel="noopener noreferrer">
-                WhatsApp <span dir="ltr">+20 101 767 0216</span>
-              </a>
-            </li>
-            <li>
-              <a href={`mailto:${links.email}`}>
-                <span dir="ltr">{links.email}</span>
-              </a>
-            </li>
+            {directLinks.map((item) => (
+              <li key={item.icon}>
+                <a href={item.href} {...(item.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
+                  <span className="direct-label">
+                    <ContactIcon name={item.icon} />
+                    {item.icon === "email" && lang === "ar" ? "البريد الإلكتروني" : item.label}
+                  </span>
+                  <span className="direct-value" dir="ltr">
+                    {item.value}
+                  </span>
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="reveal">

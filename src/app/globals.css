@@ -700,14 +700,31 @@ textarea {
 .direct-links a {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 16px;
   padding: 14px 0;
   border-bottom: 1px solid var(--line);
   transition: color 0.2s, padding 0.3s var(--ease);
 }
 
-.direct-links a span {
+.direct-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  color: var(--accent);
+}
+
+.direct-value {
   color: var(--muted);
+  font-size: 15px;
+  overflow-wrap: anywhere;
+  text-align: end;
 }
 
 .direct-links a:hover {
