@@ -1,7 +1,7 @@
 import type { Locale } from "./locales";
 
 export const links = {
-  instagram: "https://www.instagram.com/coretex.agency/",
+  instagram: "https://www.instagram.com/mohamed_abououf/",
   linkedin: "https://www.linkedin.com/in/mohamed-abou-ouf",
   whatsapp: "https://wa.me/201017670216",
   email: "mohabououf@gmail.com",
@@ -24,6 +24,7 @@ const en = {
     lead: "I'm Mohamed, a communications engineer from Port Said. I design and build websites, online stores and booking systems for growing businesses, in Arabic and English.",
     primary: "Message me on Instagram",
     secondary: "LinkedIn",
+    available: "Available for new projects",
     proof: [
       { value: "+150%", label: "conversion, Arab Collective" },
       { value: "7", label: "projects shown here" },
@@ -37,8 +38,19 @@ const en = {
     kind: { client: "Client project", company: "My company, co-founder", personal: "Personal project", university: "University project" },
     open: "View project",
   },
+  services: {
+    title: "What I do",
+    items: [
+      { name: "Website development", text: "Fast, modern websites built to convert and to grow with the business." },
+      { name: "System design", text: "Backends and databases that hold up as the product and its traffic grow." },
+      { name: "Automation", text: "Connecting tools through their APIs to save time and remove manual errors." },
+      { name: "UI/UX design", text: "Interfaces people enjoy using: clear, calm and easy to learn." },
+      { name: "Shopify development", text: "Stores built to sell, with custom themes, apps and integrations." },
+    ],
+  },
   about: {
     title: "About",
+    tagline: "Engineer by training. Builder by passion.",
     bio: [
       "I'm a communications and electronics engineer from Port Said. I studied how signals and networks carry information, and now I use the same thinking to build websites and systems that carry a business.",
       "I graduated in 2026 and co-founded Coretex, a small tech studio in Port Said. My background in information security and network engineering is why the things I ship are tested, secure and built to keep running.",
@@ -111,6 +123,7 @@ const ar: Dictionary = {
     lead: "أنا محمد، مهندس اتصالات من بورسعيد. أصمم وأبني المواقع والمتاجر الإلكترونية وأنظمة الحجز للشركات النامية، بالعربية والإنجليزية.",
     primary: "راسلني على إنستجرام",
     secondary: "لينكدإن",
+    available: "متاح لمشاريع جديدة",
     proof: [
       { value: "‎+150%", label: "معدل تحويل، Arab Collective" },
       { value: "7", label: "مشاريع معروضة هنا" },
@@ -124,8 +137,19 @@ const ar: Dictionary = {
     kind: { client: "مشروع لعميل", company: "شركتي، شريك مؤسس", personal: "مشروع شخصي", university: "مشروع جامعي" },
     open: "عرض المشروع",
   },
+  services: {
+    title: "ماذا أقدم",
+    items: [
+      { name: "تطوير المواقع", text: "مواقع سريعة وحديثة مبنية لتحقق المبيعات وتنمو مع العمل." },
+      { name: "تصميم الأنظمة", text: "خوادم وقواعد بيانات تصمد مع نمو المنتج وعدد زواره." },
+      { name: "الأتمتة", text: "ربط الأدوات عبر واجهاتها البرمجية لتوفير الوقت وتقليل الأخطاء اليدوية." },
+      { name: "تصميم واجهات المستخدم", text: "واجهات يستمتع الناس باستخدامها: واضحة وهادئة وسهلة التعلم." },
+      { name: "تطوير متاجر Shopify", text: "متاجر مبنية لتبيع، بقوالب وتطبيقات وتكاملات مخصصة." },
+    ],
+  },
   about: {
     title: "نبذة",
+    tagline: "مهندس بالدراسة، وصانع بالشغف.",
     bio: [
       "أنا مهندس اتصالات وإلكترونيات من بورسعيد. درست كيف تنقل الإشارات والشبكات المعلومات، وأستخدم اليوم نفس طريقة التفكير لبناء مواقع وأنظمة تحمل أعمال عملائي.",
       "تخرجت عام 2026 وشاركت في تأسيس Coretex، استوديو تقنية صغير في بورسعيد. خلفيتي في أمن المعلومات وهندسة الشبكات هي سبب أن ما أسلّمه مختبَر وآمن ومبني ليستمر في العمل.",

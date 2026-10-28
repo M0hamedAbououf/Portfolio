@@ -31,6 +31,10 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
               {dict.hero.secondary}
             </a>
           </div>
+          <p className="hero-status enter" style={{ animationDelay: "300ms" }}>
+            <span className="status-dot" aria-hidden="true" />
+            {dict.hero.available}
+          </p>
           <dl className="hero-proof enter" style={{ animationDelay: "360ms" }}>
             {dict.hero.proof.map((item) => (
               <div key={item.label}>
@@ -82,9 +86,24 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         </div>
       </section>
 
+      <section id="services" className="section wrap services" aria-labelledby="services-title">
+        <h2 id="services-title" className="reveal">
+          {dict.services.title}
+        </h2>
+        <ul className="service-list">
+          {dict.services.items.map((service) => (
+            <li key={service.name} className="reveal">
+              <h3>{service.name}</h3>
+              <p>{service.text}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section id="about" className="section wrap about" aria-labelledby="about-title">
         <div className="about-bio reveal">
           <h2 id="about-title">{dict.about.title}</h2>
+          <p className="about-tagline">{dict.about.tagline}</p>
           {dict.about.bio.map((para) => (
             <p key={para.slice(0, 24)}>{para}</p>
           ))}
