@@ -139,7 +139,11 @@ This file records everything done on the portfolio rebuild, every decision made 
 2. **New link preview picture.** This is the picture that shows when you send the link in WhatsApp, Instagram or LinkedIn.
    - It was dark with the old headline. Now it is light, with the new headline and your photo.
    - The file got a new name, `preview.jpg`, so chat apps fetch the new one.
-3. Wrote this summary and its PDF, and saved the four looks to the `project-notes` branch on GitHub.
+3. Updated `README.md` and `.env.example` with the live address. Also noted in the README that the form is hidden and which branches hold the old site and these notes.
+4. Removed the old 150% number from the theme mock-ups and from `PRODUCT.md` before putting them on GitHub. In the mock-ups it was replaced with 20+ projects.
+5. Wrote this summary and its PDF, and saved them with the four looks to the new `project-notes` branch on GitHub.
+   - The branch has only notes, no site code.
+   - It has its own `vercel.json` that stops Vercel from trying to build it as a website.
 
 ---
 
@@ -474,6 +478,7 @@ npm run build
 **New site (29 October 2026)**
 | Commit | What changed |
 |---|---|
+| `5a5c1d3` | Point README and .env.example at the live address |
 | `56b6236` | Replace the link preview picture with one that matches the new site |
 | `68051ec` | Hide the contact form and keep the direct links |
 | `3f86ad4` | Tell Vercel this project is a Next.js app |
@@ -488,6 +493,8 @@ npm run build
 | `2a79c7c` | Add services, availability and personal Instagram from old portfolio |
 | `a59d37a` | Make it a personal portfolio: CRM-first Arab Collective, Coretex page |
 | `6fbad12` | Rebuild portfolio in Next.js with bilingual case studies |
+
+**Notes branch `project-notes`:** its own separate history, starting with this summary, the PDF, `PRODUCT.md` and the theme pages.
 
 **Old site (April 2026, kept on `old-portfolio`)**
 | Commit | Date | What changed |
