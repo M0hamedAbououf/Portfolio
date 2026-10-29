@@ -47,52 +47,52 @@ export const projects: Project[] = [
     year: "2026",
     summary: {
       en: "An influencer CRM that sends PR gifts straight from Shopify stock, and a Shopify store with a Design Studio where customers create their own piece.",
-      ar: "نظام CRM للمؤثرين يرسل الهدايا مباشرة من مخزون Shopify، ومتجر Shopify باستوديو تصميم يتيح للعملاء تصميم قطعتهم بأنفسهم.",
+      ar: "نظام لإدارة المؤثرين (CRM) يرسل لهم الهدايا مباشرة من مخزون المتجر، ومتجر Shopify فيه استوديو يصمّم فيه العميل قطعته بنفسه.",
     },
-    highlight: { en: "CRM + Shopify", ar: "CRM و Shopify" },
+    highlight: { en: "CRM + Shopify", ar: "CRM + Shopify" },
     live: { url: "https://arabcollective.com", label: "arabcollective.com" },
     stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase", "Shopify Admin API", "Shopify"],
     need: {
       en: "Arab Collective, an Arab-heritage streetwear brand selling worldwide, needed two things: one place to manage its influencers and send them PR gifts straight from store stock, and a store that turns visits into orders in English and Arabic.",
-      ar: "احتاجت Arab Collective، علامة ملابس مستوحاة من التراث العربي تبيع حول العالم، شيئين: مكاناً واحداً لإدارة المؤثرين وإرسال هدايا لهم مباشرة من مخزون المتجر، ومتجراً يحوّل الزيارات إلى طلبات بالعربية والإنجليزية.",
+      ar: "Arab Collective علامة أزياء مستوحاة من التراث العربي، تبيع لعملاء حول العالم. كانت تحتاج أمرين: مكاناً واحداً تدير منه المؤثرين وترسل لهم الهدايا من مخزون المتجر مباشرة، ومتجراً يحوّل الزوار إلى مشترين بالعربية والإنجليزية.",
     },
     delivered: [],
     parts: [
       {
-        title: { en: "The influencer CRM I built", ar: "نظام CRM للمؤثرين الذي طوّرته" },
+        title: { en: "The influencer CRM I built", ar: "نظام إدارة المؤثرين الذي طوّرته" },
         items: [
           {
             en: "A roster of influencers across the Gulf, the Levant and North Africa, with their campaigns and results: revenue, clicks and return on spend.",
-            ar: "قائمة بالمؤثرين في الخليج والشام وشمال أفريقيا، مع حملاتهم ونتائجهم: الإيرادات والنقرات والعائد على الإنفاق.",
+            ar: "قاعدة بيانات للمؤثرين في الخليج والشام وشمال إفريقيا، مع حملاتهم ونتائجها: الإيرادات والنقرات والعائد على الإنفاق.",
           },
           {
             en: "A gift box builder that pulls live stock from the Shopify store by collection. Pick the items and sizes, and the gift goes out as a free Shopify draft order.",
-            ar: "أداة لتجهيز صندوق الهدايا تسحب المخزون الحي من متجر Shopify حسب المجموعة. اختر القطع والمقاسات، فتُرسل الهدية كطلب مسودة مجاني في Shopify.",
+            ar: "أداة لتجهيز صناديق الهدايا تعرض مخزون Shopify الفعلي مقسّماً حسب المجموعات. يختار الفريق القطع والمقاسات، فيُنشأ طلب مجاني في Shopify تلقائياً.",
           },
           {
             en: "Delivery address and phone fill in from the database, and any correction can be saved back to the influencer's profile.",
-            ar: "يُملأ عنوان التوصيل والهاتف تلقائياً من قاعدة البيانات، ويمكن حفظ أي تعديل في ملف المؤثر.",
+            ar: "عنوان التوصيل ورقم الهاتف يُملآن تلقائياً من قاعدة البيانات، وأي تعديل يُحفظ في ملف المؤثر مباشرة.",
           },
           {
             en: "Every gift is logged, and the dashboard shows a live feed of gifts sent with the courier and delivery status.",
-            ar: "تُسجَّل كل هدية، وتعرض لوحة التحكم سجلاً حياً بالهدايا المرسلة مع شركة الشحن وحالة التوصيل.",
+            ar: "كل هدية تُسجَّل، ولوحة التحكم تعرض الهدايا المرسلة أولاً بأول مع شركة الشحن وحالة التوصيل.",
           },
         ],
       },
       {
-        title: { en: "What we did on the Shopify store", ar: "ما قدمناه في متجر Shopify" },
+        title: { en: "What we did on the Shopify store", ar: "ما قدّمناه في متجر Shopify" },
         items: [
           {
             en: "A conversion-focused Shopify store, built to sell from the first visit.",
-            ar: "متجر Shopify مصمم لرفع معدل التحويل، ليبيع من أول زيارة.",
+            ar: "متجر Shopify مصمَّم ليبيع من أول زيارة.",
           },
           {
             en: "A five-step Design Studio: pick the item, choose colour and size, place the print, add the design, then review.",
-            ar: "استوديو تصميم من خمس خطوات: اختيار القطعة، ثم اللون والمقاس، ثم مكان الطباعة، ثم إضافة التصميم، ثم المراجعة.",
+            ar: "استوديو تصميم من خمس خطوات: اختيار القطعة، ثم اللون والمقاس، ثم مكان الطباعة، ثم إضافة التصميم، وأخيراً المراجعة.",
           },
           {
             en: "English and Arabic storefront with language and currency selectors for customers abroad.",
-            ar: "واجهة متجر بالعربية والإنجليزية مع اختيار اللغة والعملة للعملاء خارج مصر.",
+            ar: "واجهة بالعربية والإنجليزية، مع اختيار اللغة والعملة للعملاء خارج مصر.",
           },
         ],
       },
@@ -100,15 +100,15 @@ export const projects: Project[] = [
     engineering: [
       {
         en: "The CRM is built for catalogues of 500+ products: collections load first, products load on demand and stay cached, and one search covers the whole store.",
-        ar: "النظام مبني لكتالوجات تتجاوز 500 منتج: تُحمَّل المجموعات أولاً، ثم المنتجات عند الطلب وتبقى محفوظة، مع بحث واحد يغطي المتجر كله.",
+        ar: "صُمّم النظام ليتعامل مع أكثر من 500 منتج بسلاسة: تظهر المجموعات أولاً، ثم تُحمَّل المنتجات عند الحاجة وتبقى محفوظة، مع بحث واحد يشمل المتجر كله.",
       },
       {
         en: "Gifts are private draft orders, so they never appear on the public store.",
-        ar: "الهدايا طلبات مسودة خاصة، فلا تظهر أبداً في المتجر العام.",
+        ar: "الهدايا تُنشأ كطلبات داخلية (مسودات)، فلا تظهر أبداً في واجهة المتجر.",
       },
       {
         en: "Cleared Shopify's protected customer data review so gift orders can carry delivery details.",
-        ar: "اجتزت مراجعة Shopify لبيانات العملاء المحمية لتحمل طلبات الهدايا بيانات التوصيل.",
+        ar: "حصلت على موافقة Shopify للوصول إلى بيانات العملاء المحمية، حتى تحمل طلبات الهدايا عناوين التوصيل.",
       },
     ],
     shots: [
@@ -124,53 +124,53 @@ export const projects: Project[] = [
     year: "2026",
     summary: {
       en: "The tech studio I co-founded in Port Said with three partners: booking systems, online stores, web apps, CRM and AI automations.",
-      ar: "استوديو التقنية الذي شاركت في تأسيسه في بورسعيد مع ثلاثة شركاء: أنظمة حجز ومتاجر إلكترونية وتطبيقات ويب وأنظمة CRM وأتمتة بالذكاء الاصطناعي.",
+      ar: "شركة التقنية التي شاركت في تأسيسها في بورسعيد مع ثلاثة شركاء. نطوّر أنظمة الحجز والمتاجر الإلكترونية وتطبيقات الويب وأنظمة CRM والأتمتة بالذكاء الاصطناعي.",
     },
     highlight: { en: "Co-founder", ar: "شريك مؤسس" },
     live: { url: "https://coretex-tech.vercel.app/", label: "coretex-tech.vercel.app" },
     stack: ["Next.js", "React", "GSAP", "Supabase", "Shopify", "n8n"],
-    needTitle: { en: "Why I co-founded it", ar: "لماذا شاركت في تأسيسها" },
+    needTitle: { en: "Why I co-founded it", ar: "لماذا أسّسناها؟" },
     need: {
       en: "I'm one of Coretex's four co-founders. We started it so a growing business can get the whole system from one team, where the people you talk to are the people who build it.",
-      ar: "أنا واحد من أربعة شركاء مؤسسين لـ Coretex. أسسناها ليحصل أي عمل نامٍ على النظام كاملاً من فريق واحد، يكون فيه من تتحدث معهم هم من يطوّرون مشروعك.",
+      ar: "أنا أحد مؤسسي Coretex الأربعة. أسّسناها لتحصل الشركات النامية على نظامها الرقمي كاملاً من فريق واحد، والأشخاص الذين تتحدث معهم هم أنفسهم من ينفّذون مشروعك.",
     },
     delivered: [],
     parts: [
       {
-        title: { en: "What we provide", ar: "ما نقدمه" },
+        title: { en: "What we provide", ar: "خدماتنا" },
         items: [
           {
             en: "Build: websites, web apps and SaaS products that load fast and convert.",
-            ar: "البناء: مواقع وتطبيقات ويب ومنتجات SaaS سريعة التحميل وتحقق المبيعات.",
+            ar: "التطوير: مواقع وتطبيقات ويب ومنتجات SaaS سريعة، مصمّمة لتحقق المبيعات.",
           },
           {
             en: "Commerce: Shopify themes, custom apps and conversion work that turn traffic into orders.",
-            ar: "التجارة: قوالب Shopify وتطبيقات مخصصة وتحسين للتحويل يحوّل الزيارات إلى طلبات.",
+            ar: "التجارة الإلكترونية: قوالب Shopify وتطبيقات مخصّصة وتحسين مستمر يحوّل الزوار إلى طلبات.",
           },
           {
             en: "Automate: WhatsApp, email and CRM workflows that follow up with customers for you.",
-            ar: "الأتمتة: مسارات واتساب وبريد وCRM تتابع العملاء نيابة عنك.",
+            ar: "الأتمتة: رسائل واتساب وبريد إلكتروني ومسارات CRM تتابع عملاءك نيابة عنك.",
           },
           {
             en: "Grow: AI assistants, analytics and experiments that improve every month.",
-            ar: "النمو: مساعدات ذكاء اصطناعي وتحليلات وتجارب تتحسن كل شهر.",
+            ar: "النمو: مساعدات ذكية وتحليلات وتجارب تتحسّن نتائجها شهراً بعد شهر.",
           },
         ],
       },
       {
-        title: { en: "How a build runs", ar: "كيف ننفذ المشروع" },
+        title: { en: "How a build runs", ar: "كيف نعمل" },
         items: [
           {
             en: "A free fit call, then a clear plan with a fixed scope and one quick win live in the first week.",
-            ar: "مكالمة تعارف مجانية، ثم خطة واضحة بنطاق محدد ونتيجة سريعة تعمل في الأسبوع الأول.",
+            ar: "نبدأ بمكالمة تعارف مجانية، ثم خطة واضحة بنطاق محدد، ونسلّمك أول نتيجة ملموسة خلال الأسبوع الأول.",
           },
           {
             en: "Weekly demos on real links during the build, so the client sees progress instead of status reports.",
-            ar: "عروض أسبوعية على روابط حقيقية أثناء التنفيذ، ليرى العميل التقدم بدلاً من التقارير.",
+            ar: "عرض أسبوعي على روابط حقيقية أثناء التنفيذ، لترى التقدّم بنفسك بدلاً من التقارير.",
           },
           {
             en: "Launch, then 30 days of care: we measure, fix what the data shows and train the team.",
-            ar: "الإطلاق، ثم ثلاثون يوماً من المتابعة: نقيس ونصلح ما تكشفه البيانات وندرّب الفريق.",
+            ar: "بعد الإطلاق نتابع معك ثلاثين يوماً: نقيس الأداء، ونصلح ما تكشفه البيانات، وندرّب فريقك.",
           },
         ],
       },
@@ -178,11 +178,11 @@ export const projects: Project[] = [
     engineering: [
       {
         en: "The Coretex site itself is bilingual with real Arabic right-to-left, light and dark themes and an animated 3D mark.",
-        ar: "موقع Coretex نفسه ثنائي اللغة بعربية حقيقية من اليمين لليسار، مع وضعين فاتح وداكن وشعار ثلاثي الأبعاد متحرك.",
+        ar: "موقع Coretex نفسه ثنائي اللغة، بعربية مكتوبة من اليمين لليسار كما ينبغي، مع وضعين فاتح وداكن وشعار ثلاثي الأبعاد متحرك.",
       },
       {
         en: "Coretex OS, our own internal platform for leads, tasks, content and performance, with role-based access and live updates.",
-        ar: "Coretex OS، منصتنا الداخلية لإدارة العملاء المحتملين والمهام والمحتوى والأداء، بصلاحيات حسب الدور وتحديثات لحظية.",
+        ar: "Coretex OS: منصتنا الداخلية لإدارة العملاء المحتملين والمهام والمحتوى والأداء، بصلاحيات حسب الدور وتحديث فوري.",
       },
     ],
     shots: [
@@ -197,45 +197,45 @@ export const projects: Project[] = [
     year: "2026",
     summary: {
       en: "Bilingual booking platform: clients book, pay and send proof in one flow, and the team reviews every booking live.",
-      ar: "منصة حجز ثنائية اللغة: يحجز العميل ويدفع ويرسل الإثبات في خطوة واحدة، ويراجع الفريق كل حجز لحظياً.",
+      ar: "منصة حجز بالعربية والإنجليزية: يحجز العميل ويدفع ويرفع إيصال الدفع في خطوات قليلة، ويتابع الفريق كل حجز لحظة بلحظة.",
     },
-    highlight: { en: "Live", ar: "يعمل الآن" },
+    highlight: { en: "Live", ar: "متاح الآن" },
     live: { url: "https://eldabah.com", label: "eldabah.com" },
     stack: ["Next.js", "React", "TypeScript", "Supabase", "Resend", "Vercel", "Cloudflare"],
     need: {
       en: "Bookings were arriving through direct messages. The client needed one place where people book a plan, pay with local methods and send proof, and where the team can review every request.",
-      ar: "كانت الحجوزات تصل عبر الرسائل المباشرة. احتاج العميل مكاناً واحداً يحجز فيه الناس الخدمة ويدفعون بوسائل الدفع المحلية ويرسلون الإثبات، ويراجع فيه الفريق كل طلب.",
+      ar: "كانت الحجوزات تصل عبر الرسائل الخاصة وتضيع بينها. احتاج العميل مكاناً واحداً يحجز فيه الناس ويدفعون بوسائل الدفع المحلية ويرسلون إثبات الدفع، ويراجع فيه الفريق كل طلب.",
     },
     delivered: [
       {
         en: "A booking flow with InstaPay and Vodafone Cash QR codes and receipt upload. Receipts are compressed in the browser before they are sent.",
-        ar: "مسار حجز برموز QR لإنستاباي وفودافون كاش ورفع إيصال الدفع، مع ضغط الإيصال داخل المتصفح قبل إرساله.",
+        ar: "خطوات حجز مع رموز QR للدفع عبر إنستاباي وفودافون كاش ورفع الإيصال، مع ضغط صورة الإيصال قبل إرسالها.",
       },
       {
         en: "Every booking is saved as pending and both admins get an email straight away.",
-        ar: "يُحفظ كل حجز كطلب قيد المراجعة، ويصل بريد فوري لكلا المسؤولَين.",
+        ar: "كل حجز يُحفظ بحالة «قيد المراجعة»، ويصل إشعار فوري بالبريد إلى المسؤولَين.",
       },
       {
         en: "A private dashboard with live updates, search and filters, receipt previews, status changes (pending, verified, rejected) and a CSV export that opens correctly in Excel with Arabic.",
-        ar: "لوحة تحكم خاصة بتحديثات لحظية وبحث وفلاتر ومعاينة الإيصالات وتغيير الحالة (قيد المراجعة، مؤكد، مرفوض)، وتصدير CSV يفتح بالعربية بشكل صحيح في Excel.",
+        ar: "لوحة تحكم خاصة تتحدّث لحظياً، فيها بحث وفلاتر ومعاينة للإيصالات وتغيير لحالة الحجز (قيد المراجعة، مؤكد، مرفوض)، وتصدير ملف CSV يظهر بالعربية سليماً في Excel.",
       },
       {
         en: "Arabic-first design with an English option and light and dark themes.",
-        ar: "تصميم بالعربية أولاً مع خيار الإنجليزية ووضعين فاتح وداكن.",
+        ar: "تصميم بالعربية أولاً مع نسخة إنجليزية، ووضعين فاتح وداكن.",
       },
     ],
     engineering: [
       {
         en: "Every form is checked on the server and limited to 5 requests per 15 minutes per visitor.",
-        ar: "يُتحقق من كل نموذج على الخادم، بحد خمسة طلبات كل خمس عشرة دقيقة لكل زائر.",
+        ar: "يُتحقَّق من كل نموذج على الخادم، بحد أقصى خمسة طلبات كل ربع ساعة للزائر الواحد.",
       },
       {
         en: "Admin pages are protected by role-based sign-in; receipts open through links that expire after five minutes.",
-        ar: "صفحات الإدارة محمية بتسجيل دخول حسب الصلاحية، والإيصالات تُفتح بروابط تنتهي بعد خمس دقائق.",
+        ar: "صفحات الإدارة محمية بتسجيل دخول حسب الصلاحيات، والإيصالات تُفتح بروابط تنتهي صلاحيتها بعد خمس دقائق.",
       },
       {
         en: "The sending domain is set up with SPF and DKIM so emails reach the inbox.",
-        ar: "نطاق الإرسال مضبوط بسجلات SPF وDKIM لتصل الرسائل إلى صندوق الوارد.",
+        ar: "نطاق البريد مضبوط بسجلات SPF وDKIM، حتى تصل الرسائل إلى البريد الوارد لا إلى الرسائل المزعجة.",
       },
     ],
     shots: [
@@ -250,45 +250,45 @@ export const projects: Project[] = [
     year: "2026",
     summary: {
       en: "Custom WordPress theme for an eleven-suite boutique retreat in New Cairo, with direct booking.",
-      ar: "قالب ووردبريس مخصص لفندق بوتيك من أحد عشر جناحاً في القاهرة الجديدة، مع حجز مباشر.",
+      ar: "قالب ووردبريس مخصّص لفندق بوتيك من أحد عشر جناحاً في القاهرة الجديدة، مع حجز مباشر من الموقع.",
     },
     highlight: { en: "11 suites", ar: "11 جناحاً" },
-    status: { en: "Launching soon", ar: "يُطلق قريباً" },
+    status: { en: "Launching soon", ar: "قريباً" },
     stack: ["WordPress", "PHP", "JavaScript", "Cloudbeds"],
     need: {
       en: "A new eleven-suite retreat in New Cairo needed a website as calm as the place itself, one that takes bookings directly instead of through travel sites.",
-      ar: "احتاج فندق جديد من أحد عشر جناحاً في القاهرة الجديدة موقعاً هادئاً كالمكان نفسه، يستقبل الحجوزات مباشرة بدلاً من مواقع السفر.",
+      ar: "فندق جديد من أحد عشر جناحاً في القاهرة الجديدة، أراد موقعاً هادئاً يشبه المكان نفسه، ويستقبل الحجوزات مباشرة دون الاعتماد على مواقع الحجز.",
     },
     delivered: [
       {
         en: "A custom WordPress theme: home, suites with a page for each one, restaurant, pool and lounge, about and contact.",
-        ar: "قالب ووردبريس مخصص: الرئيسية، والأجنحة مع صفحة لكل جناح، والمطعم، والمسبح والاستراحة، ومن نحن، وتواصل معنا.",
+        ar: "قالب ووردبريس مخصّص يضم: الرئيسية، والأجنحة مع صفحة مستقلة لكل جناح، والمطعم، والمسبح والاستراحة، وصفحتي «من نحن» و«تواصل معنا».",
       },
       {
         en: "Cloudbeds booking built in: book buttons, a date bar and a booking window, all managed from the WordPress admin.",
-        ar: "نظام الحجز Cloudbeds مدمج: أزرار الحجز وشريط التواريخ ونافذة الحجز، وكلها تُدار من لوحة ووردبريس.",
+        ar: "ربط نظام الحجز Cloudbeds بالموقع: أزرار الحجز وشريط اختيار التواريخ ونافذة الحجز، وكلها تُدار من لوحة ووردبريس.",
       },
       {
         en: "Enquiry and newsletter forms with spam protection.",
-        ar: "نماذج استفسار ونشرة بريدية محمية من الرسائل المزعجة.",
+        ar: "نماذج للاستفسار والاشتراك في النشرة البريدية، محمية من الرسائل المزعجة.",
       },
       {
         en: "A step-by-step launch plan for going live.",
-        ar: "خطة إطلاق مفصلة خطوة بخطوة.",
+        ar: "خطة إطلاق مفصّلة خطوة بخطوة.",
       },
     ],
     engineering: [
       {
         en: "Structured data for the hotel, its rooms and its restaurant, so search engines understand the property.",
-        ar: "بيانات منظَّمة للفندق وغرفه ومطعمه ليفهم محرك البحث طبيعة المكان.",
+        ar: "بيانات منظَّمة للفندق وغرفه ومطعمه، تساعد محركات البحث على فهم المكان وعرضه بشكل أفضل.",
       },
       {
         en: "Self-hosted fonts and plain JavaScript keep the theme light and fast.",
-        ar: "خطوط مستضافة ذاتياً وجافاسكربت خفيف يحافظان على سرعة القالب.",
+        ar: "خطوط مستضافة على الموقع نفسه وجافاسكربت خفيف، للحفاظ على سرعة التصفح.",
       },
       {
         en: "Right-to-left support for Arabic built into the theme.",
-        ar: "دعم الكتابة من اليمين لليسار للعربية مدمج في القالب.",
+        ar: "دعم كامل للعربية من اليمين لليسار داخل القالب.",
       },
     ],
     shots: [
@@ -304,40 +304,40 @@ export const projects: Project[] = [
     year: "2026",
     summary: {
       en: "A streetwear storefront concept where a live 3D scene surrounds flat product photography.",
-      ar: "تصور لمتجر ملابس يحيط فيه مشهد ثلاثي الأبعاد حي بصور المنتجات المسطحة.",
+      ar: "فكرة لمتجر ملابس، يتحرك فيه مشهد ثلاثي الأبعاد حول صور المنتجات دون أن يغطيها.",
     },
     highlight: { en: "Three.js", ar: "Three.js" },
     stack: ["React", "TypeScript", "Vite", "Three.js", "Playwright"],
     need: {
       en: "A personal experiment: can a store use real-time 3D without hiding the products? Here the 3D lives around the photos, never inside them.",
-      ar: "تجربة شخصية: هل يمكن لمتجر أن يستخدم الأبعاد الثلاثية دون أن يخفي المنتجات؟ هنا يعيش المشهد حول الصور، لا بداخلها.",
+      ar: "تجربة شخصية أردت فيها الإجابة عن سؤال: هل يمكن أن يستخدم المتجر الأبعاد الثلاثية دون أن يسرق الانتباه من المنتجات؟ فكان الحل أن يتحرك المشهد حول الصور لا بداخلها.",
     },
     delivered: [
       {
         en: "Twelve products with colours and sizes, filters, search, sorting and a quick view with a size guide.",
-        ar: "اثنا عشر منتجاً بألوان ومقاسات، مع فلاتر وبحث وترتيب وعرض سريع بدليل المقاسات.",
+        ar: "اثنا عشر منتجاً بألوان ومقاسات مختلفة، مع فلاتر وبحث وترتيب، ونافذة عرض سريع فيها دليل المقاسات.",
       },
       {
         en: "A bag that merges matching items, limits quantities and works out free shipping. The bag and wishlist are kept between visits.",
-        ar: "سلة تدمج القطع المتطابقة وتضبط الكميات وتحسب الشحن المجاني، وتُحفظ السلة والمفضلة بين الزيارات.",
+        ar: "سلة تدمج القطع المتشابهة وتضبط الكميات وتحسب الشحن المجاني، وتحفظ السلة والمفضلة حتى الزيارة التالية.",
       },
       {
         en: "A demo checkout that ends with an order confirmation.",
-        ar: "إتمام شراء تجريبي ينتهي بتأكيد الطلب.",
+        ar: "خطوات شراء تجريبية تنتهي بتأكيد الطلب.",
       },
       {
         en: "A live 3D hero that follows the pointer.",
-        ar: "واجهة ثلاثية الأبعاد حية تتبع حركة المؤشر.",
+        ar: "واجهة ثلاثية الأبعاد تتفاعل مع حركة المؤشر.",
       },
     ],
     engineering: [
       {
         en: "11 end-to-end tests with Playwright, including a 320px phone width and a fallback when 3D is unavailable.",
-        ar: "‏11 اختباراً شاملاً بـ Playwright، منها عرض هاتف 320 بكسل وبديل عند عدم توفر الأبعاد الثلاثية.",
+        ar: "‏11 اختباراً آلياً شاملاً باستخدام Playwright، منها اختبار على شاشة هاتف بعرض 320 بكسل، وبديل يعمل إذا لم يدعم الجهاز الأبعاد الثلاثية.",
       },
       {
         en: "Motion respects reduced-motion settings and pauses when it is off screen.",
-        ar: "الحركة تحترم إعداد تقليل الحركة وتتوقف عندما تكون خارج الشاشة.",
+        ar: "تتوقف الحركة عند تفعيل خيار «تقليل الحركة» في الجهاز، وعندما يخرج المشهد من الشاشة.",
       },
     ],
     shots: [
@@ -352,26 +352,26 @@ export const projects: Project[] = [
     year: "2026",
     summary: {
       en: "A demo bowling pro shop with a live catalogue, cart and contact form backed by Supabase.",
-      ar: "متجر تجريبي لمعدات البولينج بكتالوج حي وسلة ونموذج تواصل مدعوم بـ Supabase.",
+      ar: "متجر تجريبي لمعدات البولينج، فيه كتالوج وسلة مشتريات ونموذج تواصل مرتبط بـ Supabase.",
     },
     highlight: { en: "18 tests", ar: "18 اختباراً" },
     stack: ["JavaScript", "HTML", "CSS", "Supabase", "Node test runner"],
     need: {
       en: "A practice project: a small store built without a framework, with logic clean enough to move to a server later.",
-      ar: "مشروع تدريبي: متجر صغير بلا إطار عمل، بمنطق نظيف يسهل نقله إلى خادم لاحقاً.",
+      ar: "مشروع تدريبي: متجر صغير بدون أي إطار عمل، بكود منظّم يسهل نقله إلى خادم لاحقاً.",
     },
     delivered: [
       {
         en: "Products load from Supabase, with a built-in list as a fallback.",
-        ar: "تُحمَّل المنتجات من Supabase، مع قائمة احتياطية مدمجة.",
+        ar: "تُحمَّل المنتجات من Supabase، مع قائمة احتياطية جاهزة داخل الموقع.",
       },
       {
         en: "Filter by category, search and price, and sort the results.",
-        ar: "فلترة حسب الفئة والبحث والسعر، مع ترتيب النتائج.",
+        ar: "فلترة حسب الفئة والسعر، مع بحث وترتيب للنتائج.",
       },
       {
         en: "A cart that respects stock and works out shipping (free over $100) and tax.",
-        ar: "سلة تحترم المخزون وتحسب الشحن (مجاني فوق 100 دولار) والضريبة.",
+        ar: "سلة تراعي الكمية المتوفرة وتحسب الشحن (مجاناً فوق 100 دولار) والضريبة.",
       },
       {
         en: "A contact form that saves each message to Supabase.",
@@ -381,11 +381,11 @@ export const projects: Project[] = [
     engineering: [
       {
         en: "Cart, catalogue and contact logic are separate from the page and covered by 18 unit tests.",
-        ar: "منطق السلة والكتالوج والتواصل منفصل عن الصفحة ومغطى بـ 18 اختباراً.",
+        ar: "منطق السلة والكتالوج والتواصل منفصل عن الواجهة، ومغطّى بـ 18 اختباراً.",
       },
       {
         en: "Database tables are protected with row-level security.",
-        ar: "جداول قاعدة البيانات محمية بسياسات الأمان على مستوى الصف.",
+        ar: "جداول قاعدة البيانات محمية بسياسات أمان على مستوى الصفوف (RLS).",
       },
     ],
     shots: [
@@ -400,36 +400,36 @@ export const projects: Project[] = [
     year: "2024",
     summary: {
       en: "Desktop media player in Python with speed control, 5-second skips and keyboard shortcuts, rebuilt with tested playback logic.",
-      ar: "مشغل وسائط لسطح المكتب بلغة Python مع التحكم في السرعة والتقديم خمس ثوانٍ واختصارات لوحة المفاتيح، أعيد بناؤه بمنطق تشغيل مختبَر.",
+      ar: "مشغّل وسائط لسطح المكتب بلغة Python، فيه تحكم في السرعة وتقديم وتأخير خمس ثوانٍ واختصارات للوحة المفاتيح، ثم أعدت كتابته بمنطق تشغيل مختبَر.",
     },
     highlight: { en: "27 tests", ar: "27 اختباراً" },
     stack: ["Python", "Tkinter", "VLC", "Pillow", "pytest"],
     need: {
       en: "A university project at Port Said University's Faculty of Engineering (Electronics and Communications), built with Youssef Khaled and supervised by Dr. Islam Shaalan.",
-      ar: "مشروع جامعي في كلية الهندسة بجامعة بورسعيد (قسم الإلكترونيات والاتصالات)، نفذته مع يوسف خالد تحت إشراف د. إسلام شعلان.",
+      ar: "مشروع جامعي في قسم هندسة الإلكترونيات والاتصالات بكلية الهندسة، جامعة بورسعيد. نفّذته مع زميلي يوسف خالد تحت إشراف د. إسلام شعلان.",
     },
     delivered: [
       {
         en: "Play, pause, 5-second skips, speed from 0.5x to 4x and volume control.",
-        ar: "تشغيل وإيقاف وتقديم خمس ثوانٍ، وسرعة من 0.5x حتى 4x، والتحكم في الصوت.",
+        ar: "تشغيل وإيقاف، وتقديم وتأخير خمس ثوانٍ، وسرعة من 0.5x إلى 4x، والتحكم في مستوى الصوت.",
       },
       {
         en: "Keyboard shortcuts, fullscreen and a redesigned window in Foxi's turquoise and navy.",
-        ar: "اختصارات لوحة المفاتيح وملء الشاشة ونافذة معاد تصميمها بألوان Foxi الفيروزية والكحلية.",
+        ar: "اختصارات للوحة المفاتيح، ووضع ملء الشاشة، ونافذة بتصميم جديد بألوان Foxi الفيروزية والكحلية.",
       },
       {
         en: "Smooth custom-drawn buttons and sliders.",
-        ar: "أزرار ومنزلقات مرسومة خصيصاً بحواف ناعمة.",
+        ar: "أزرار وشرائط تحكم مرسومة خصيصاً بحواف ناعمة.",
       },
     ],
     engineering: [
       {
         en: "Rebuilt from one 174-line file into a small package where the playback rules are separate from the window and from VLC.",
-        ar: "أعيد بناؤه من ملف واحد من 174 سطراً إلى حزمة صغيرة تفصل قواعد التشغيل عن النافذة وعن VLC.",
+        ar: "أعدت كتابته من ملف واحد من 174 سطراً إلى حزمة منظّمة، تفصل قواعد التشغيل عن الواجهة وعن VLC.",
       },
       {
         en: "27 automated tests run against a fake engine, so they don't need VLC installed.",
-        ar: "‏27 اختباراً آلياً تعمل على محرك بديل، فلا تحتاج إلى تثبيت VLC.",
+        ar: "‏27 اختباراً آلياً تعمل على محرك وهمي، فلا تحتاج إلى تثبيت VLC لتشغيلها.",
       },
     ],
     shots: [

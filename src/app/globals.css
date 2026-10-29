@@ -286,9 +286,81 @@ textarea {
   height: 18px;
 }
 
-@media (max-width: 760px) {
+/* Phone menu: hidden on wide screens, replaces the inline links below 900px. */
+.menu-toggle {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 900px) {
   .nav-links {
     display: none;
+  }
+
+  .menu-toggle {
+    display: inline-grid;
+  }
+
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    inset: 76px 0 0;
+    z-index: 19;
+    padding: 24px var(--gutter) 40px;
+    background: var(--bg);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s var(--ease), visibility 0.35s;
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-menu ul {
+    list-style: none;
+  }
+
+  .mobile-menu li {
+    border-bottom: 1px solid var(--line);
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+  }
+
+  .mobile-menu.is-open li {
+    opacity: 1;
+    transform: none;
+  }
+
+  .mobile-menu a {
+    display: block;
+    padding: 18px 0;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -0.01em;
+  }
+
+  .mobile-menu a:active,
+  .mobile-menu a:hover {
+    color: var(--accent);
+  }
+
+  .menu-open,
+  .menu-open body {
+    overflow: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu,
+  .mobile-menu li {
+    transition: none;
   }
 }
 
