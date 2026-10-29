@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ContactForm } from "@/components/ContactForm";
 import { ContactIcon, type ContactIconName } from "@/components/ContactIcon";
 import { HeroArt } from "@/components/HeroArt";
 import { getDictionary, links } from "@/content/dictionary";
@@ -173,6 +172,8 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <div className="contact-copy reveal">
           <h2 id="contact-title">{dict.contact.title}</h2>
           <p>{dict.contact.lead}</p>
+        </div>
+        <div className="contact-direct reveal">
           <h3>{dict.contact.direct}</h3>
           <ul className="direct-links">
             {directLinks.map((item) => (
@@ -189,9 +190,6 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
               </li>
             ))}
           </ul>
-        </div>
-        <div className="reveal">
-          <ContactForm lang={lang} copy={dict.contact.form} />
         </div>
       </section>
     </>

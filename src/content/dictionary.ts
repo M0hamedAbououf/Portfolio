@@ -84,7 +84,7 @@ const en = {
   },
   contact: {
     title: "Have a project in mind? Tell me about it",
-    lead: "The fastest way to reach me is Instagram or LinkedIn. Or leave a message here and I will reply within a day.",
+    lead: "The fastest way to reach me is Instagram or LinkedIn. Send me a message and I will reply within a day.",
     form: {
       name: "Your name",
       reach: "How can I reach you?",
@@ -97,7 +97,7 @@ const en = {
       failed: "The message did not send. Please message me on Instagram or email instead.",
       limited: "Too many messages in a short time. Please try again in a few minutes.",
     },
-    direct: "Or reach me directly",
+    direct: "Reach me directly",
   },
   project: {
     back: "All work",
@@ -192,7 +192,7 @@ const ar: Dictionary = {
   },
   contact: {
     title: "عندك فكرة مشروع؟ احكيلي عنها",
-    lead: "لو عايز رد أسرع ابعتلي على إنستجرام أو لينكدإن، أو سيب رسالتك هنا وهرد عليك خلال 24 ساعة.",
+    lead: "أسرع طريقة تكلّمني بيها إنستجرام أو لينكدإن، ابعتلي وهرد عليك خلال 24 ساعة.",
     form: {
       name: "اسمك",
       reach: "أكلّمك إزاي؟",

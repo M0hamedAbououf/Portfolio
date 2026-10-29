@@ -815,10 +815,9 @@ textarea {
   max-width: 46ch;
 }
 
-.contact-copy h3 {
+.contact-direct h3 {
   font-size: 18px;
   letter-spacing: -0.01em;
-  margin-top: 40px;
 }
 
 .direct-links {
