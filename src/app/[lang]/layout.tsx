@@ -7,6 +7,7 @@ import { RevealObserver } from "@/components/RevealObserver";
 import { getDictionary } from "@/content/dictionary";
 import { dirOf, isLocale, locales } from "@/content/locales";
 import "../globals.css";
+import { siteUrl } from "@/lib/site";
 
 // Montserrat titles over Lato text; Cairo and Tajawal are their Arabic partners.
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["600", "700"], variable: "--font-display" });
@@ -14,7 +15,6 @@ const lato = Lato({ subsets: ["latin"], weight: ["400", "700", "900"], variable:
 const cairo = Cairo({ subsets: ["arabic"], weight: ["700", "800"], variable: "--font-arabic-display" });
 const tajawal = Tajawal({ subsets: ["arabic"], weight: ["400", "500", "700"], variable: "--font-arabic" });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 // Runs before paint so the saved theme never flashes the wrong one.
 const themeScript = `(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');d.dataset.theme=t==='dark'?'dark':'light'}catch(e){}})()`;
