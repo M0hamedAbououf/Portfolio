@@ -180,7 +180,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                 <a href={item.href} {...(item.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
                   <span className="direct-label">
                     <ContactIcon name={item.icon} />
-                    {item.icon === "email" && lang === "ar" ? "البريد الإلكتروني" : item.label}
+                    {item.icon === "email" && lang === "ar" ? "الإيميل" : item.label}
                   </span>
                   <span className="direct-value" dir="ltr">
                     {item.value}
