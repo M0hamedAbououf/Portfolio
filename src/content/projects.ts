@@ -70,7 +70,7 @@ export const projects: Project[] = [
             ar: "أداة لتجهيز بوكسات الهدايا بتعرض مخزون Shopify الحقيقي متقسّم حسب الكولكشنز. الفريق يختار القطع والمقاسات، فيتعمل أوردر مجاني على Shopify لوحده.",
           },
           {
-            en: "Delivery address and phone fill in from the database, and any correction can be saved back to the influencer's profile.",
+            en: "Delivery address and phone fill in from the database, and any correction can be saved back to the profile of that influencer.",
             ar: "العنوان ورقم الموبايل بيتملوا لوحدهم من قاعدة البيانات، وأي تعديل بيتحفظ في ملف الإنفلونسر على طول.",
           },
           {
@@ -107,7 +107,7 @@ export const projects: Project[] = [
         ar: "الهدايا بتتعمل كأوردرات داخلية (درافت)، فمش بتظهر خالص في المتجر للناس.",
       },
       {
-        en: "Cleared Shopify's protected customer data review so gift orders can carry delivery details.",
+        en: "Passed the Shopify review for protected customer data so gift orders can carry delivery details.",
         ar: "خدت موافقة Shopify على بيانات العملاء المحمية، عشان أوردرات الهدايا تقدر تشيل عناوين التوصيل.",
       },
     ],
@@ -131,7 +131,7 @@ export const projects: Project[] = [
     stack: ["Next.js", "React", "GSAP", "Supabase", "Shopify", "n8n"],
     needTitle: { en: "Why I co-founded it", ar: "ليه أسّسناها؟" },
     need: {
-      en: "I'm one of Coretex's four co-founders. We started it so a growing business can get the whole system from one team, where the people you talk to are the people who build it.",
+      en: "I am one of the four co-founders of Coretex. We started it so a growing business can get the whole system from one team, where the people you talk to are the people who build it.",
       ar: "أنا واحد من 4 مؤسسين لـ Coretex. أسّسناها عشان أي شركة بتكبر تاخد السيستم بتاعها كامل من فريق واحد، واللي بتتكلم معاهم هما نفسهم اللي بينفّذوا مشروعك.",
     },
     delivered: [],
@@ -213,7 +213,7 @@ export const projects: Project[] = [
       },
       {
         en: "Every booking is saved as pending and both admins get an email straight away.",
-        ar: "كل حجز بيتحفظ على إنه «تحت المراجعة»، والاتنين المسؤولين بيوصلهم إيميل على طول.",
+        ar: "كل حجز بيتحفظ على إنه تحت المراجعة، والاتنين المسؤولين بيوصلهم إيميل على طول.",
       },
       {
         en: "A private dashboard with live updates, search and filters, receipt previews, status changes (pending, verified, rejected) and a CSV export that opens correctly in Excel with Arabic.",
@@ -262,7 +262,7 @@ export const projects: Project[] = [
     delivered: [
       {
         en: "A custom WordPress theme: home, suites with a page for each one, restaurant, pool and lounge, about and contact.",
-        ar: "ثيم ووردبريس مخصوص فيه: الرئيسية، والأجنحة وكل جناح ليه صفحة لوحده، والمطعم، والبيسين واللاونج، وصفحتين «مين إحنا» و«كلّمنا».",
+        ar: "ثيم ووردبريس مخصوص فيه: الرئيسية، والأجنحة وكل جناح ليه صفحة لوحده، والمطعم، والبيسين واللاونج، وصفحة مين إحنا وصفحة كلّمنا.",
       },
       {
         en: "Cloudbeds booking built in: book buttons, a date bar and a booking window, all managed from the WordPress admin.",
@@ -337,7 +337,7 @@ export const projects: Project[] = [
       },
       {
         en: "Motion respects reduced-motion settings and pauses when it is off screen.",
-        ar: "الحركة بتقف لو الشخص مفعّل «تقليل الحركة» على جهازه، ولما المشهد يخرج من الشاشة.",
+        ar: "الحركة بتقف لو الشخص مفعّل خاصية تقليل الحركة على جهازه، ولما المشهد يخرج من الشاشة.",
       },
     ],
     shots: [
@@ -405,7 +405,7 @@ export const projects: Project[] = [
     highlight: { en: "27 tests", ar: "27 اختبار" },
     stack: ["Python", "Tkinter", "VLC", "Pillow", "pytest"],
     need: {
-      en: "A university project at Port Said University's Faculty of Engineering (Electronics and Communications), built with Youssef Khaled and supervised by Dr. Islam Shaalan.",
+      en: "A university project at the Faculty of Engineering, Port Said University (Electronics and Communications), built with Youssef Khaled and supervised by Dr. Islam Shaalan.",
       ar: "مشروع في الجامعة، في قسم هندسة الإلكترونيات والاتصالات بكلية الهندسة جامعة بورسعيد. عملته مع زميلي يوسف خالد تحت إشراف د. إسلام شعلان.",
     },
     delivered: [
@@ -414,7 +414,7 @@ export const projects: Project[] = [
         ar: "تشغيل وإيقاف، وتقديم ورجوع 5 ثواني، وسرعة من 0.5x لحد 4x، وتحكم في الصوت.",
       },
       {
-        en: "Keyboard shortcuts, fullscreen and a redesigned window in Foxi's turquoise and navy.",
+        en: "Keyboard shortcuts, fullscreen and a redesigned window in the Foxi turquoise and navy.",
         ar: "اختصارات للكيبورد، وملء الشاشة، وشكل جديد للبرنامج بألوان Foxi التركواز والكحلي.",
       },
       {
@@ -428,7 +428,7 @@ export const projects: Project[] = [
         ar: "رجعت كتبته من فايل واحد فيه 174 سطر لباكدج منظّمة، بتفصل قواعد التشغيل عن الواجهة وعن VLC.",
       },
       {
-        en: "27 automated tests run against a fake engine, so they don't need VLC installed.",
+        en: "27 automated tests run against a fake engine, so they do not need VLC installed.",
         ar: "‏27 اختبار أوتوماتيك شغّالين على محرك وهمي، فمش محتاج تنزّل VLC عشان تشغّلهم.",
       },
     ],

@@ -29,7 +29,7 @@ const en = {
   langSwitch: { label: "عربي", title: "اقرأ الموقع بالعربية" },
   hero: {
     role: "Mohamed Abououf, communications engineer",
-    title: "Hi, I'm Mohamed. I build digital products that work.",
+    title: "Hi, I am Mohamed. I build digital products that work.",
     lead: "Websites, online stores, booking systems and CRMs, designed and engineered from start to finish, in Arabic and English. Based in Port Said, working with clients everywhere.",
     primary: "Message me on Instagram",
     secondary: "LinkedIn",
@@ -42,7 +42,7 @@ const en = {
     portraitAlt: "Mohamed Abououf",
   },
   work: {
-    title: "Projects I've built",
+    title: "Projects I have built",
     intro: "Client work, the studio I co-founded, and the projects I build to learn.",
     kind: { client: "Client project", company: "My company, co-founder", personal: "Personal project", university: "University project" },
     open: "View project",
@@ -61,7 +61,7 @@ const en = {
     title: "About",
     tagline: "Engineer by training. Builder by passion.",
     bio: [
-      "I'm a communications and electronics engineer from Port Said. I studied how signals and networks carry information, and now I use the same thinking to build websites and systems that carry a business.",
+      "I am a communications and electronics engineer from Port Said. I studied how signals and networks carry information, and now I use the same thinking to build websites and systems that carry a business.",
       "I graduated in 2026 and co-founded Coretex, a small tech studio in Port Said. My background in information security and network engineering is why the things I ship are tested, secure and built to keep running.",
     ],
     timelineTitle: "Experience",
@@ -83,8 +83,8 @@ const en = {
     languages: "Arabic (native), English (fluent)",
   },
   contact: {
-    title: "Let's talk about your project",
-    lead: "The fastest way to reach me is Instagram or LinkedIn. Or leave a message here and I'll reply within a day.",
+    title: "Have a project in mind? Tell me about it",
+    lead: "The fastest way to reach me is Instagram or LinkedIn. Or leave a message here and I will reply within a day.",
     form: {
       name: "Your name",
       reach: "How can I reach you?",
@@ -92,9 +92,9 @@ const en = {
       message: "What do you want to build?",
       send: "Send message",
       sending: "Sending…",
-      sent: "Thanks, your message is on its way. I'll reply within a day.",
+      sent: "Thanks, your message is on its way. I will reply within a day.",
       invalid: "Please check the highlighted fields.",
-      failed: "The message didn't send. Please message me on Instagram or email instead.",
+      failed: "The message did not send. Please message me on Instagram or email instead.",
       limited: "Too many messages in a short time. Please try again in a few minutes.",
     },
     direct: "Or reach me directly",
