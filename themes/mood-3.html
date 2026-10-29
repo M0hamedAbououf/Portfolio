@@ -1,0 +1,415 @@
+<!doctype html>
+<!--
+  PROTOTYPE round 3 (throwaway). Question: which classy palette + layout.
+  A = original portfolio colours (bronze), B = green reference, C = periwinkle reference, D = navy & champagne device studio.
+  ?variant=A|B|C|D  ?lang=en|ar  ?theme=light|dark   Serve over http (textures): http://127.0.0.1:5510/portfolio/prototype/mood-3.html
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio looks, round 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500;600&family=Archivo:wdth,wght@62..125,400..900&family=Anybody:wdth,wght@50..150,200..700&family=Figtree:wght@400;500;600&family=Bodoni+Moda:opsz,wght@6..96,400..600&family=Hanken+Grotesk:wght@400;500;600&family=Noto+Kufi+Arabic:wght@400;600&family=Alexandria:wght@400;600;800&family=Readex+Pro:wght@300;400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none;cursor:pointer}
+button{font:inherit;color:inherit}
+body{background:var(--bg);color:var(--ink);transition:background .4s,color .4s;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.variant{display:none}.variant.on{display:block}
+:focus-visible{outline:2px solid var(--p);outline-offset:3px}
+.shot{width:100%;height:100%;object-fit:cover;object-position:top center}
+img[src*="portrait-cut"]{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 14%,#000 86%,transparent 100%),linear-gradient(180deg,#000 80%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0,#000 14%,#000 86%,transparent 100%),linear-gradient(180deg,#000 80%,transparent 100%);mask-composite:intersect}
+.glow{position:absolute;inset:0;background:radial-gradient(closest-side,color-mix(in srgb,var(--p) 22%,transparent),transparent);pointer-events:none}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
+.seg button{border:0;background:transparent;padding:6px 12px;border-radius:999px;cursor:pointer;font-size:13px;color:var(--muted)}
+.seg button.on{background:var(--ink);color:var(--bg)}
+.ctrls{display:flex;gap:8px}
+.in{opacity:0;transform:translateY(16px);animation:in 1s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes in{to{opacity:1;transform:none}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.vis{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.in,.reveal{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+nav.top{display:flex;justify-content:space-between;align-items:center;padding:26px 0;position:relative;z-index:5}
+nav.top .links{display:flex;gap:30px;font-size:15px;color:var(--muted)}
+nav.top .links a:hover{color:var(--ink)}
+@media (max-width:860px){nav.top .links{display:none}}
+
+/* ============ A · Original (bronze) ============ */
+body.vA{--bg:#0E0C0A;--surface:#1A1410;--ink:#F3EEE9;--muted:#8F8880;--p:#BA957C;--s:#5E4636;--line:#2C2118;font-family:Inter,sans-serif}
+[data-theme=light] body.vA{--bg:#F5F0EB;--surface:#EDE5DC;--ink:#14110E;--muted:#5A5550;--p:#8F6A50;--s:#D4C4B5;--line:#D4C4B5}
+:root[lang=ar] body.vA{font-family:"Noto Kufi Arabic",sans-serif}
+.A .brand{font-family:Oswald;font-weight:500;letter-spacing:.14em;font-size:18px}
+:root[lang=ar] .A .brand,:root[lang=ar] .A h1,:root[lang=ar] .A h2,:root[lang=ar] .A h3{font-family:"Noto Kufi Arabic";letter-spacing:0}
+.A .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;min-height:calc(100vh - 90px);padding-bottom:40px}
+.A .role{color:var(--p);font-size:15px;font-weight:500}
+.A h1{font-family:Oswald;font-weight:500;font-size:clamp(44px,5.6vw,80px);line-height:1.02;text-transform:uppercase;letter-spacing:.005em;margin:18px 0 26px}
+:root[lang=ar] .A h1{text-transform:none;font-weight:600;line-height:1.35;font-size:clamp(36px,4.4vw,60px)}
+.A .lead{color:var(--muted);font-size:18px;line-height:1.7;max-width:54ch}
+.A .cta{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.A .btn{padding:15px 26px;border:1px solid var(--p);font-weight:500;font-size:15px;transition:background .3s,color .3s}
+.A .btn.p{background:var(--p);color:var(--bg)}
+.A .btn:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.A .proof{display:flex;gap:44px;margin-top:54px;padding-top:26px;border-top:1px solid var(--line)}
+.A .proof b{display:block;font-family:Oswald;font-weight:500;font-size:34px;color:var(--p)}
+.A .proof span{font-size:13px;color:var(--muted)}
+.A .portrait{position:relative;height:min(760px,86vh)}
+.A .portrait canvas{position:absolute;inset:-60px;width:calc(100% + 120px)!important;height:calc(100% + 120px)!important;pointer-events:none;z-index:0}
+.A .frame{position:absolute;z-index:1;inset:0}
+.A .frame img{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:100%;width:auto;max-width:none}
+.A .work{padding:90px 0 160px}
+.A h2{font-family:Oswald;font-weight:500;text-transform:uppercase;letter-spacing:.04em;font-size:40px;margin-bottom:46px}
+.A .grid{display:grid;grid-template-columns:1fr 1fr;gap:34px 40px}
+.A .card:nth-child(even){margin-top:90px}
+.A .card .m{aspect-ratio:4/3;overflow:hidden;background:var(--surface)}
+.A .card .m img{transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.A .card:hover .m img{transform:scale(1.04)}
+.A .card .row{display:flex;justify-content:space-between;gap:20px;margin-top:18px;align-items:baseline}
+.A .card h3{font-family:Oswald;font-weight:500;font-size:26px;letter-spacing:.02em}
+.A .card .metric{color:var(--p);font-family:Oswald;font-size:20px;white-space:nowrap}
+.A .card p{color:var(--muted);line-height:1.65;margin-top:8px;max-width:50ch}
+.A .card .who{font-size:13px;color:var(--p);margin-top:12px}
+@media (max-width:900px){.A .hero{grid-template-columns:1fr}.A .portrait{height:460px;order:-1}.A .grid{grid-template-columns:1fr}.A .card:nth-child(even){margin-top:0}}
+
+/* ============ B · Green (palette from reference) ============ */
+body.vB{--bg:#F5FFFD;--surface:#FFFFFF;--ink:#011613;--muted:#647F7F;--p:#066150;--s:#94948E;--soft:#B0C1C1;--line:#DCE8E6;font-family:Archivo,sans-serif}
+[data-theme=dark] body.vB{--bg:#011613;--surface:#08241F;--ink:#E8F4F1;--muted:#9DB3B1;--p:#3FA98B;--s:#94948E;--soft:#2C4B47;--line:#143530}
+:root[lang=ar] body.vB{font-family:"Alexandria",sans-serif}
+.B .brand{font-weight:700;font-size:18px}
+.B .brand i{font-style:normal;color:var(--p)}
+.B .hero{display:grid;grid-template-columns:1.1fr .9fr;align-items:end;min-height:calc(100vh - 90px);gap:20px}
+.B .copy{padding-bottom:13vh}
+.B .role{display:inline-flex;align-items:center;gap:10px;font-size:15px;color:var(--muted);font-weight:500}
+.B .role::before{content:"";width:28px;height:2px;background:var(--p)}
+.B h1{font-weight:700;font-size:clamp(42px,5vw,72px);line-height:1.04;letter-spacing:-.025em;margin:22px 0 22px}
+:root[lang=ar] .B h1{font-weight:600;line-height:1.35;letter-spacing:0;font-size:clamp(34px,4vw,56px)}
+.B h1 em{font-style:normal;color:var(--p)}
+.B .lead{font-size:18px;line-height:1.7;color:var(--muted);max-width:52ch}
+.B .cta{display:flex;gap:12px;margin-top:32px}
+.B .btn{padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid var(--soft);color:var(--ink)}
+.B .btn.p{background:var(--p);border-color:var(--p);color:#fff}
+.B .proof{display:flex;gap:38px;margin-top:44px;padding-top:24px;border-top:1px solid var(--line)}
+.B .proof b{display:block;font-weight:700;font-size:30px;color:var(--p)}
+.B .proof span{font-size:13px;color:var(--muted)}
+.B .figure{position:relative;height:min(780px,86vh)}
+.B .figure canvas{position:absolute;inset:0;z-index:0}
+.B .figure .photo{position:absolute;z-index:1;inset:0}
+.B .figure .photo img{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:92%;width:auto;max-width:none}
+.B .work{padding:110px 0 160px}
+.B h2{font-weight:700;font-size:44px;letter-spacing:-.02em;margin-bottom:36px}
+.B .list{display:flex;flex-direction:column;gap:22px}
+.B .item{display:grid;grid-template-columns:300px 1fr;gap:30px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:16px;align-items:center;transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s}
+.B .item:hover{transform:translateY(-4px);box-shadow:0 24px 44px -28px rgba(6,97,80,.45)}
+.B .item .m{aspect-ratio:16/10.5;border-radius:12px;overflow:hidden}
+.B .item h3{font-weight:700;font-size:24px}
+.B .item p{color:var(--muted);line-height:1.6;margin-top:6px;font-size:15px;max-width:60ch}
+.B .item .meta{display:flex;gap:14px;margin-top:12px;font-size:13px;color:var(--muted)}
+.B .item .meta b{color:var(--p)}
+@media (max-width:900px){.B .hero{grid-template-columns:1fr}.B .figure{height:460px;order:-1}.B .copy{padding-bottom:40px}.B .item{grid-template-columns:1fr}}
+
+/* ============ C · Periwinkle (reference) ============ */
+body.vC{--bg:#EDE8F5;--sky:#C9D3EE;--ink:#1D2350;--muted:#5A6290;--p:#3D52A0;--s:#7091E6;--line:#ADBBDA;--plinth:#F4F2FA;font-family:Figtree,sans-serif}
+[data-theme=dark] body.vC{--bg:#11132A;--sky:#1E2550;--ink:#EDE8F5;--muted:#A7B0D8;--p:#8FA8F0;--s:#7091E6;--line:#2E3566;--plinth:#2A3060;}
+:root[lang=ar] body.vC{font-family:"Readex Pro",sans-serif}
+.C .hero{position:relative;height:100vh;min-height:940px;background:linear-gradient(180deg,var(--bg) 0%,var(--sky) 100%);overflow:hidden}
+.C .hero canvas{position:absolute;inset:0}
+.C .hero .wrap{position:relative;z-index:2;max-width:1360px}
+.C .brand{font-family:Anybody;font-stretch:130%;font-weight:500;font-size:15px;color:var(--ink)}
+.C .giant{font-family:Anybody;font-stretch:150%;font-weight:250;font-size:clamp(46px,8.6vw,138px);line-height:.92;letter-spacing:-.02em;color:var(--ink);margin-top:4vh;white-space:nowrap}
+:root[lang=ar] .C .giant{font-family:"Readex Pro";font-weight:300;letter-spacing:0;line-height:1.2}
+.C .intro{display:flex;gap:30px;align-items:center;margin-top:26px;max-width:780px}
+.C .me{width:300px;height:380px;flex:none;position:relative}
+.C .me img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:104%;width:auto;max-width:none}
+.C .lead{font-size:17px;line-height:1.6;color:var(--muted)}
+.C .lead b{color:var(--ink);font-weight:600}
+.C .cta{display:flex;gap:10px;margin-top:16px}
+.C .btn{padding:11px 20px;border-radius:999px;font-size:14px;font-weight:600;border:1px solid var(--p);color:var(--p);background:rgba(255,255,255,.35);backdrop-filter:blur(6px)}
+.C .btn.p{background:var(--p);color:#fff}
+.C .work{padding:110px 0 160px}
+.C h2{font-family:Anybody;font-stretch:140%;font-weight:300;font-size:56px;color:var(--ink);margin-bottom:40px}
+:root[lang=ar] .C h2{font-family:"Readex Pro"}
+.C .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.C .card{background:var(--plinth);border-radius:22px;padding:14px 14px 22px;border:1px solid var(--line)}
+.C .card .m{aspect-ratio:16/10;border-radius:14px;overflow:hidden}
+.C .card .row{display:flex;justify-content:space-between;align-items:baseline;padding:18px 8px 0}
+.C .card h3{font-family:Anybody;font-stretch:125%;font-weight:500;font-size:22px}
+:root[lang=ar] .C .card h3{font-family:"Readex Pro"}
+.C .card .metric{color:var(--p);font-weight:600}
+.C .card p{color:var(--muted);padding:6px 8px 0;line-height:1.6;font-size:15px}
+@media (max-width:860px){.C .grid{grid-template-columns:1fr}.C .giant{white-space:normal}.C .intro{flex-direction:column;align-items:flex-start}.C .me{width:260px;height:320px}}
+
+/* ============ D · Navy & champagne (idea) ============ */
+body.vD{--bg:#F3F4F6;--surface:#FFFFFF;--ink:#14213D;--muted:#5B6478;--p:#14213D;--s:#B8955A;--line:#E1E4EA;font-family:"Hanken Grotesk",sans-serif}
+[data-theme=dark] body.vD{--bg:#0C1322;--surface:#131C30;--ink:#ECEFF5;--muted:#9AA4B8;--p:#E9EDF5;--s:#D2B47C;--line:#222D44}
+:root[lang=ar] body.vD{font-family:"IBM Plex Sans Arabic",sans-serif}
+.D .brand{font-family:"Bodoni Moda";font-size:22px;font-weight:500}
+.D .hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:calc(100vh - 90px);gap:30px}
+.D .who{display:flex;align-items:flex-end;gap:22px}
+.D .who .ph{width:240px;height:290px;flex:none;position:relative}
+.D .who .ph img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:102%;width:auto;max-width:none}
+.D .who b{font-size:20px;font-weight:600;display:block}.D .who span{color:var(--muted);font-size:15px;display:block;margin-top:4px;padding-bottom:10px}
+.D .chip{display:inline-flex;align-items:center;gap:12px;padding:6px 16px 6px 6px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+:root[dir=rtl] .D .who{display:flex;align-items:flex-end;gap:22px}
+.D .who .ph{width:240px;height:290px;flex:none;position:relative}
+.D .who .ph img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:102%;width:auto;max-width:none}
+.D .who b{font-size:20px;font-weight:600;display:block}.D .who span{color:var(--muted);font-size:15px;display:block;margin-top:4px;padding-bottom:10px}
+.D .chip{padding:6px 6px 6px 16px}
+.D .chip img{width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:top}
+.D .chip b{font-size:14px;display:block}.D .chip span{font-size:13px;color:var(--muted)}
+.D h1{font-family:"Bodoni Moda";font-weight:500;font-size:clamp(42px,5vw,72px);line-height:1.04;letter-spacing:-.015em;margin:26px 0 22px}
+:root[lang=ar] .D h1,:root[lang=ar] .D h2,:root[lang=ar] .D .brand{font-family:Amiri;font-weight:700;line-height:1.35;letter-spacing:0}
+.D h1 .gold{color:var(--s)}
+.D .lead{font-size:18px;line-height:1.7;color:var(--muted);max-width:52ch}
+.D .cta{display:flex;gap:12px;margin-top:30px}
+.D .btn{padding:15px 26px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--surface)}
+.D .btn.p{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.D .stage{height:620px;position:relative}
+.D .work{padding:100px 0 160px}
+.D h2{font-family:"Bodoni Moda";font-weight:500;font-size:48px;margin-bottom:36px}
+.D .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.D .b{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.D .b.big{grid-column:span 4;grid-row:span 2}.D .b.side{grid-column:span 2}.D .b.third{grid-column:span 2}
+.D .b .m{flex:1;min-height:200px;overflow:hidden}
+.D .b .t{padding:20px 22px}
+.D .b h3{font-size:20px;font-weight:600}
+.D .b p{color:var(--muted);font-size:15px;line-height:1.55;margin-top:6px}
+.D .b .metric{font-family:"Bodoni Moda";font-size:46px;color:var(--s);line-height:1}
+.D .b.stat{justify-content:center;padding:26px}
+@media (max-width:900px){.D .hero{grid-template-columns:1fr}.D .stage{height:420px}.D .bento{grid-template-columns:1fr}.D .b{grid-column:auto!important}}
+
+#switcher{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:100;display:flex;align-items:center;gap:6px;background:#202020;color:#fff;border-radius:999px;padding:6px;box-shadow:0 10px 30px rgba(0,0,0,.35);font:600 14px/1 system-ui,sans-serif;direction:ltr}
+#switcher button{background:#3a3a3a;border:0;color:#fff;width:34px;height:34px;border-radius:50%;cursor:pointer}
+#switcher .lbl{padding:0 14px;min-width:240px;text-align:center}
+#switcher small{display:block;opacity:.6;font-weight:400;font-size:11px;margin-top:4px}
+</style>
+</head>
+<body>
+
+<!-- ============ A ============ -->
+<section class="variant A" data-v="A"><div class="wrap">
+  <nav class="top"><div class="brand">ABOUOUF</div><div class="links"><a data-t="work"></a><a>Coretex</a><a data-t="about"></a><a data-t="contact"></a></div><div class="ctrls"></div></nav>
+  <div class="hero">
+    <div>
+      <div class="role in" data-t="role"></div>
+      <h1 class="in" style="animation-delay:.1s" data-t="h1"></h1>
+      <p class="lead in" style="animation-delay:.2s" data-t="lead"></p>
+      <div class="cta in" style="animation-delay:.3s"><a class="btn p" data-t="ig"></a><a class="btn">LinkedIn</a></div>
+      <div class="proof in" style="animation-delay:.45s"><div><b>20+</b><span data-t="pf1"></span></div><div><b>5</b><span data-t="pf2"></span></div><div><b>EN / ع</b><span data-t="pf3"></span></div></div>
+    </div>
+    <div class="portrait in" style="animation-delay:.2s" id="stageA"><div class="glow"></div><div class="frame"><img src="shots/portrait-cut.png" alt="Mohamed Abououf"></div></div>
+  </div>
+  <div class="work"><h2 data-t="sel"></h2><div class="grid" data-list="A"></div></div>
+</div></section>
+
+<!-- ============ B ============ -->
+<section class="variant B" data-v="B"><div class="wrap">
+  <nav class="top"><div class="brand">Mohamed <i>Abououf</i></div><div class="links"><a data-t="work"></a><a>Coretex</a><a data-t="about"></a><a data-t="contact"></a></div><div class="ctrls"></div></nav>
+  <div class="hero">
+    <div class="copy">
+      <div class="role in" data-t="role"></div>
+      <h1 class="in" style="animation-delay:.1s" data-t="h1B"></h1>
+      <p class="lead in" style="animation-delay:.2s" data-t="lead"></p>
+      <div class="cta in" style="animation-delay:.3s"><a class="btn p" data-t="ig"></a><a class="btn">LinkedIn</a></div>
+      <div class="proof in" style="animation-delay:.45s"><div><b>20+</b><span data-t="pf1"></span></div><div><b>5</b><span data-t="pf2"></span></div><div><b>EN / ع</b><span data-t="pf3"></span></div></div>
+    </div>
+    <div class="figure in" style="animation-delay:.15s" id="stageB"><div class="glow"></div><div class="photo"><img src="shots/portrait-cut.png" alt="Mohamed Abououf"></div></div>
+  </div>
+  <div class="work"><h2 data-t="sel"></h2><div class="list" data-list="B"></div></div>
+</div></section>
+
+<!-- ============ C ============ -->
+<section class="variant C" data-v="C">
+  <div class="hero" id="stageC"><div class="wrap">
+    <nav class="top"><div class="brand">Mohamed Abououf</div><div class="links"><a data-t="work"></a><a>Coretex</a><a data-t="about"></a><a data-t="contact"></a></div><div class="ctrls"></div></nav>
+    <div class="giant in" data-t="giant"></div>
+    <div class="intro in" style="animation-delay:.2s"><div class="me"><img src="shots/portrait-cut.png" alt="Mohamed Abououf"></div><div><p class="lead" data-t="leadC"></p><div class="cta"><a class="btn p" data-t="ig"></a><a class="btn">LinkedIn</a></div></div></div>
+  </div></div>
+  <div class="wrap work"><h2 data-t="sel"></h2><div class="grid" data-list="C"></div></div>
+</section>
+
+<!-- ============ D ============ -->
+<section class="variant D" data-v="D"><div class="wrap">
+  <nav class="top"><div class="brand">Mohamed Abououf</div><div class="links"><a data-t="work"></a><a>Coretex</a><a data-t="about"></a><a data-t="contact"></a></div><div class="ctrls"></div></nav>
+  <div class="hero">
+    <div>
+      <div class="who in"><div class="ph"><img src="shots/portrait-cut.png" alt="Mohamed Abououf"></div><div><b>Mohamed Abououf</b><span data-t="role"></span></div></div>
+      <h1 class="in" style="animation-delay:.1s" data-t="h1D"></h1>
+      <p class="lead in" style="animation-delay:.2s" data-t="lead"></p>
+      <div class="cta in" style="animation-delay:.3s"><a class="btn p" data-t="ig"></a><a class="btn">LinkedIn</a></div>
+    </div>
+    <div class="stage" id="stageD"></div>
+  </div>
+  <div class="work"><h2 data-t="sel"></h2><div class="bento" data-list="D"></div></div>
+</div></section>
+
+<div id="switcher"><button id="prev" aria-label="Previous look">&larr;</button><div class="lbl"><span id="vlabel"></span><small>prototype: ← → switch looks</small></div><button id="next" aria-label="Next look">&rarr;</button></div>
+
+<script>
+const S = {ac:"shots/arabcollective.jpg", da:"shots/eldabah.jpg", yu:"shots/yuva.jpg", og:"shots/offgrid.jpg", fx:"shots/foxi.jpg", me:"shots/portrait-cut.png"};
+const T = {
+  en:{work:"Work",about:"About",contact:"Contact",sel:"Selected work",
+    role:"Communications engineer, co-founder of Coretex",
+    h1:"Websites, stores and booking systems that bring in customers.",
+    h1D:"Digital products, built <span class='gold'>end to end.</span>",
+    h1B:"Websites, stores and booking systems <em>that bring in customers.</em>",
+    giant:"ABOUOUF",
+    lead:"I'm Mohamed. With Coretex, our studio in Cairo, I design, build and run complete systems for growing businesses, in Arabic and English.",
+    leadC:"<b>Mohamed Abououf</b>, communications engineer and co-founder of Coretex. We design, build and run complete systems for growing businesses, in Arabic and English.",
+    ig:"Message me on Instagram",pf1:"projects delivered",pf2:"projects",pf3:"every build bilingual",
+    client:"Coretex client",own:"Personal project",
+    p:[["Arab Collective","Streetwear store on Shopify with a Design Studio where customers create their own piece.","Shopify store and CRM","ac"],
+       ["Dabah House","Bilingual booking platform: clients book, pay and send proof in one flow.","Live","da"],
+       ["Yuva House","Custom WordPress theme for an eleven-suite boutique hotel in New Cairo.","11 suites","yu"],
+       ["OFFGRID","3D streetwear storefront concept with a real-time hero.","Three.js","og"],
+       ["Foxi Player","Desktop media player in Python with speed control, 5-second skips and keyboard shortcuts, rebuilt with tested playback logic.","Python","fx"]]},
+  ar:{work:"الأعمال",about:"نبذة",contact:"تواصل",sel:"أعمال مختارة",
+    role:"مهندس اتصالات وشريك مؤسس في Coretex",
+    h1:"مواقع ومتاجر وأنظمة حجز تجلب لك العملاء.",
+    h1D:"منتجات رقمية، نبنيها <span class='gold'>من البداية للنهاية.</span>",
+    h1B:"مواقع ومتاجر وأنظمة حجز <em>تجلب لك العملاء.</em>",
+    giant:"محمد أبو عوف",
+    lead:"أنا محمد. مع Coretex، استوديو التقنية الخاص بنا في القاهرة، أصمم وأبني وأدير أنظمة متكاملة للشركات النامية، بالعربية والإنجليزية.",
+    leadC:"<b>محمد أبو عوف</b>، مهندس اتصالات وشريك مؤسس في Coretex. نصمم ونبني وندير أنظمة متكاملة للشركات النامية، بالعربية والإنجليزية.",
+    ig:"راسلني على إنستجرام",pf1:"مشروع خلّصته",pf2:"مشاريع",pf3:"كل مشروع بلغتين",
+    client:"عميل Coretex",own:"مشروع شخصي",
+    p:[["Arab Collective","متجر ملابس على Shopify مع استوديو تصميم يتيح للعملاء تصميم قطعتهم بأنفسهم.","متجر Shopify وسيستم CRM","ac"],
+       ["Dabah House","منصة حجز ثنائية اللغة: يحجز العميل ويدفع ويرسل الإثبات في خطوة واحدة.","مباشر","da"],
+       ["Yuva House","قالب ووردبريس مخصص لفندق بوتيك من أحد عشر جناحاً في القاهرة الجديدة.","11 جناحاً","yu"],
+       ["OFFGRID","تصور لمتجر ملابس ثلاثي الأبعاد بواجهة تفاعلية.","Three.js","og"],
+       ["Foxi Player","مشغل وسائط لسطح المكتب بلغة Python مع التحكم في السرعة والتقديم خمس ثوانٍ واختصارات لوحة المفاتيح، أعيد بناؤه بمنطق تشغيل مختبَر.","Python","fx"]]}
+};
+const NAMES={A:"Original colours (bronze)",B:"Green (palette from your picture)",C:"Periwinkle (your reference)",D:"Navy & champagne (my idea)"};
+const DEF_THEME={A:"dark",B:"light",C:"light",D:"light"};
+const K=["A","B","C","D"], Q=new URLSearchParams(location.search);
+let variant=K.includes(Q.get("variant"))?Q.get("variant"):"A";
+let lang=Q.get("lang")==="ar"?"ar":"en";
+let theme=Q.get("theme")||DEF_THEME[variant];
+const root=document.documentElement, onTheme=[];
+const css=n=>getComputedStyle(document.body).getPropertyValue(n).trim();
+const who=i=>i===4?(lang==="ar"?"مشروع جامعي، جامعة بورسعيد":"University project, Port Said University"):i===3?T[lang].own:T[lang].client;
+
+function list(){
+  const t=T[lang], el=document.querySelector(`.variant.on [data-list]`);
+  const P=t.p;
+  if(variant==="A") el.innerHTML=P.map(([n,d,m,k],i)=>`<article class="card reveal"><div class="m"><img class="shot" src="${S[k]}" alt=""></div><div class="row"><h3>${n}</h3><span class="metric">${m}</span></div><p>${d}</p><div class="who">${who(i)}</div></article>`).join("");
+  if(variant==="B") el.innerHTML=P.map(([n,d,m,k],i)=>`<article class="item reveal"><div class="m"><img class="shot" src="${S[k]}" alt=""></div><div><h3>${n}</h3><p>${d}</p><div class="meta"><b>${m}</b><span>${who(i)}</span></div></div></article>`).join("");
+  if(variant==="C") el.innerHTML=P.map(([n,d,m,k],i)=>`<article class="card reveal"><div class="m"><img class="shot" src="${S[k]}" alt=""></div><div class="row"><h3>${n}</h3><span class="metric">${m}</span></div><p>${d}</p></article>`).join("");
+  if(variant==="D") el.innerHTML=`
+    <article class="b big reveal"><div class="m"><img class="shot" src="${S.ac}" alt=""></div><div class="t"><h3>${P[0][0]}</h3><p>${P[0][1]}</p></div></article>
+    <article class="b side stat reveal"><div class="metric">20+</div><p>${lang==="ar"?"مشروع خلّصته، عربي وإنجليزي.":"projects delivered, in Arabic and English."}</p></article>
+    <article class="b side reveal"><div class="m"><img class="shot" src="${S.da}" alt=""></div><div class="t"><h3>${P[1][0]}</h3><p>${P[1][1]}</p></div></article>
+    <article class="b third reveal"><div class="m"><img class="shot" src="${S.yu}" alt=""></div><div class="t"><h3>${P[2][0]}</h3><p>${P[2][1]}</p></div></article>
+    <article class="b third reveal"><div class="m"><img class="shot" src="${S.og}" alt=""></div><div class="t"><h3>${P[3][0]}</h3><p>${P[3][1]}</p></div></article>
+    <article class="b third reveal"><div class="m"><img class="shot" src="${S.fx}" alt=""></div><div class="t"><h3>${P[4][0]}</h3><p>${P[4][1]}</p></div></article>`;
+  el.querySelectorAll(".reveal").forEach(e=>io.observe(e));
+}
+function controls(){
+  document.querySelectorAll(".variant.on .ctrls").forEach(c=>c.innerHTML=`<div class="seg"><button data-lang="en">EN</button><button data-lang="ar">عربي</button></div><div class="seg"><button data-theme="light" aria-label="Light mode">☀</button><button data-theme="dark" aria-label="Dark mode">☾</button></div>`);
+  document.querySelectorAll("[data-lang]").forEach(b=>b.onclick=()=>{lang=b.dataset.lang;apply()});
+  document.querySelectorAll("[data-theme]").forEach(b=>b.onclick=()=>{theme=b.dataset.theme;apply()});
+}
+function apply(){
+  root.lang=lang; root.dir=lang==="ar"?"rtl":"ltr"; root.dataset.theme=theme;
+  document.querySelectorAll("[data-t]").forEach(e=>e.innerHTML=T[lang][e.dataset.t]);
+  document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===lang));
+  document.querySelectorAll("[data-theme]").forEach(b=>b.classList.toggle("on",b.dataset.theme===theme));
+  list(); history.replaceState(null,"","?"+new URLSearchParams({variant,lang,theme}));
+  requestAnimationFrame(()=>onTheme.forEach(f=>f()));
+}
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add("vis")),{threshold:.1});
+function go(d){variant=K[(K.indexOf(variant)+d+K.length)%K.length];theme=DEF_THEME[variant];history.replaceState(null,"","?"+new URLSearchParams({variant,lang,theme}));location.reload()}
+document.getElementById("prev").onclick=()=>go(-1);document.getElementById("next").onclick=()=>go(1);
+addEventListener("keydown",e=>{if(e.key==="ArrowLeft")go(-1);if(e.key==="ArrowRight")go(1)});
+document.querySelector(`.variant.${variant}`).classList.add("on");
+document.body.className="v"+variant;
+document.getElementById("vlabel").textContent=variant+" · "+NAMES[variant];
+controls(); apply();
+
+/* ---------------- 3D ---------------- */
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const mouse={x:0,y:0}; addEventListener("pointermove",e=>{mouse.x=e.clientX/innerWidth-.5;mouse.y=e.clientY/innerHeight-.5});
+function scene(el,fov=35){
+  const r=new THREE.WebGLRenderer({antialias:true,alpha:true});
+  r.setPixelRatio(Math.min(devicePixelRatio,2)); r.outputEncoding=THREE.sRGBEncoding; el.prepend(r.domElement);
+  const s=new THREE.Scene(), c=new THREE.PerspectiveCamera(fov,1,.1,200);
+  const fit=()=>{const w=r.domElement.parentElement.clientWidth, h=r.domElement.parentElement.clientHeight; const cw=el.id==="stageA"?w+120:w, ch=el.id==="stageA"?h+120:h; r.setSize(cw,ch); c.aspect=cw/ch; c.updateProjectionMatrix()};
+  fit(); addEventListener("resize",fit); return {r,s,c};
+}
+const tex=src=>{const t=new THREE.TextureLoader().load(src); t.encoding=THREE.sRGBEncoding; t.anisotropy=4; return t};
+function loop(f){ (function l(t){f((t||0)/1000); if(!reduce) requestAnimationFrame(l)})(); }
+
+// A: a slow bronze ring orbiting the portrait arch
+if(variant==="A"){
+  const {r,s,c}=scene(document.getElementById("stageA"),30); c.position.z=12;
+  s.add(new THREE.AmbientLight(0xffffff,.35));
+  const k=new THREE.DirectionalLight(0xfff1e0,1.6); k.position.set(4,5,6); s.add(k);
+  const rim=new THREE.DirectionalLight(0xffffff,.8); rim.position.set(-6,-2,-3); s.add(rim);
+  const mat=new THREE.MeshStandardMaterial({metalness:.85,roughness:.32});
+  const ring=new THREE.Mesh(new THREE.TorusGeometry(3.1,.075,32,200),mat); s.add(ring);
+  const ring2=new THREE.Mesh(new THREE.TorusGeometry(3.5,.03,16,200),mat); s.add(ring2);
+  const tint=()=>mat.color.set(css("--p")); tint(); onTheme.push(tint);
+  loop(t=>{ring.rotation.x=1.25+Math.sin(t*.4)*.08+mouse.y*.3; ring.rotation.y=t*.25+mouse.x*.5; ring2.rotation.x=1.1-mouse.y*.2; ring2.rotation.y=-t*.18; r.render(s,c)});
+}
+
+// B: a slow network globe (nodes and links) behind the portrait
+if(variant==="B"){
+  const el=document.getElementById("stageB"); const {r,s,c}=scene(el,32); c.position.z=10;
+  const N=220, pts=[];
+  for(let i=0;i<N;i++){const y=1-(i/(N-1))*2, rad=Math.sqrt(1-y*y), th=i*2.39996; pts.push(new THREE.Vector3(Math.cos(th)*rad,y,Math.sin(th)*rad).multiplyScalar(1.75))}
+  const seg=[]; pts.forEach((a,i)=>pts.forEach((b,j)=>{if(j>i&&a.distanceTo(b)<.42)seg.push(a,b)}));
+  const lm=new THREE.LineBasicMaterial({transparent:true,opacity:.45}), pm=new THREE.PointsMaterial({size:.07});
+  const g=new THREE.Group(); g.add(new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(seg),lm)); g.add(new THREE.Points(new THREE.BufferGeometry().setFromPoints(pts),pm)); g.position.y=.9; s.add(g);
+  const tint=()=>{lm.color.set(css("--s")); pm.color.set(css("--p"))}; tint(); onTheme.push(tint);
+  loop(t=>{g.rotation.y=t*.12+mouse.x*.5; g.rotation.x=.2+mouse.y*.3; r.render(s,c)});
+}
+
+// C: white plinths with floating project cards, after the Shopify Editions reference
+if(variant==="C"){
+  const el=document.getElementById("stageC"); const {r,s,c}=scene(el,30);
+  const CY=-.6; c.position.set(0,6,34); c.lookAt(0,CY,0);
+  s.add(new THREE.HemisphereLight(0xffffff,0x9aa8d8,.95));
+  const sun=new THREE.DirectionalLight(0xffffff,.65); sun.position.set(-8,12,10); s.add(sun);
+  const pm=new THREE.MeshStandardMaterial({roughness:.9});
+  // [x, top, z, width, depth]; every plinth runs down out of frame
+  const plinths=[[-13,-7.2,-1,4.4,3.6],[-8.4,-6.2,1.5,4,3.4],[-3.6,-7.6,-.5,3.4,3],[.8,-5.6,1,4.2,3.6],[5.4,-7,-1,3.6,3.2],[9.8,-6,1.2,4.2,3.4],[14,-7.8,-.6,3.6,3]];
+  plinths.forEach(([x,top,z,w,d])=>{const h=top+18; const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),pm); m.position.set(x,top-h/2,z); s.add(m)});
+  // [src, plinth index, card width, card height, rotation]
+  const cards=[[S.ac,1,3.8,2.4,.16],[S.da,3,3.8,2.4,-.04],[S.yu,5,3.8,2.4,-.16],[S.og,0,3.2,2,.24],[S.fx,2,3.2,2,.08]].map(([src,pi,w,h,ry])=>{const [x,top,z]=plinths[pi]; return [src,x,top+h/2+.35,z,w,h,ry]});
+  const gem=new THREE.Mesh(new THREE.OctahedronGeometry(.7,0),new THREE.MeshStandardMaterial({color:0x7091E6,metalness:.3,roughness:.15})); gem.position.set(5.4,-6.2,-1); s.add(gem);
+  const coin=new THREE.Mesh(new THREE.CylinderGeometry(.8,.8,.18,48),new THREE.MeshStandardMaterial({color:0xC9CEDB,metalness:.9,roughness:.25})); coin.position.set(14,-6.4,-.6); coin.rotation.x=1.2; s.add(coin);
+  const meshes=cards.map(([src,x,y,z,w,h,ry],i)=>{const g=new THREE.Group();
+    const fr=new THREE.Mesh(new THREE.BoxGeometry(w+.16,h+.16,.08),new THREE.MeshStandardMaterial({color:0xffffff,roughness:.4}));
+    const im=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({map:tex(src)})); im.position.z=.045;
+    g.add(fr,im); g.position.set(x,y,z); g.rotation.y=ry; g.userData={y,i}; s.add(g); return g});
+  const tint=()=>pm.color.set(css("--plinth")); tint(); onTheme.push(tint);
+  loop(t=>{meshes.forEach(g=>{g.position.y=g.userData.y+Math.sin(t*.8+g.userData.i)*.1});
+    gem.rotation.y=t*.6; gem.position.y=-6.2+Math.sin(t)*.15; coin.rotation.z=t*.5;
+    c.position.x+=(mouse.x*4-c.position.x)*.04; c.position.y+=((6-mouse.y*2)-c.position.y)*.04; c.lookAt(0,CY,0); r.render(s,c)});
+}
+
+// D: a laptop and a phone showing real work, turning with the cursor
+if(variant==="D"){
+  const {r,s,c}=scene(document.getElementById("stageD"),30); c.position.set(0,5,17); c.lookAt(0,.4,0);
+  s.add(new THREE.AmbientLight(0xffffff,.5)); const k=new THREE.DirectionalLight(0xffffff,1); k.position.set(5,6,8); s.add(k);
+  const body=new THREE.MeshStandardMaterial({color:0x2a3142,metalness:.6,roughness:.35});
+  const g=new THREE.Group(); g.scale.setScalar(.82); g.position.x=-.4; s.add(g);
+  const base=new THREE.Mesh(new THREE.BoxGeometry(7.2,.18,4.6),body); base.position.set(-.6,-1.6,0); g.add(base);
+  const keys=new THREE.Mesh(new THREE.PlaneGeometry(6.4,2.2),new THREE.MeshStandardMaterial({color:0x111622,roughness:.8})); keys.rotation.x=-Math.PI/2; keys.position.set(-.6,-1.505,-.7); g.add(keys);
+  const pad=new THREE.Mesh(new THREE.PlaneGeometry(2.2,1.2),new THREE.MeshStandardMaterial({color:0x3a4256,roughness:.5})); pad.rotation.x=-Math.PI/2; pad.position.set(-.6,-1.505,1.4); g.add(pad);
+  const lid=new THREE.Group(); lid.position.set(-.6,-1.5,-2.3); lid.rotation.x=-.22; g.add(lid);
+  const sc=new THREE.Mesh(new THREE.BoxGeometry(7.2,4.6,.14),body); sc.position.y=2.3; lid.add(sc);
+  const scr=new THREE.Mesh(new THREE.PlaneGeometry(6.8,4.25),new THREE.MeshBasicMaterial({map:tex(S.ac)})); scr.position.set(0,2.3,.075); lid.add(scr);
+  const ph=new THREE.Group(); ph.position.set(3.4,-.4,2.4); ph.rotation.y=-.3; g.add(ph);
+  const pb=new THREE.Mesh(new THREE.BoxGeometry(1.9,3.9,.18),body); ph.add(pb);
+  const pt=tex(S.da); pt.repeat.set(.42,1); pt.offset.set(.5,0);
+  const ps=new THREE.Mesh(new THREE.PlaneGeometry(1.72,3.7),new THREE.MeshBasicMaterial({map:pt})); ps.position.z=.095; ph.add(ps);
+  const shots=[S.ac,S.yu,S.og]; let si=0; setInterval(()=>{si=(si+1)%shots.length; scr.material.map=tex(shots[si]); scr.material.needsUpdate=true},3500);
+  const tint=()=>body.color.set(theme==="dark"?0xc9ccd4:0x2a3142); tint(); onTheme.push(tint);
+  loop(t=>{g.rotation.y=-.25+mouse.x*.5+Math.sin(t*.3)*.05; g.rotation.x=.08+mouse.y*.2; ph.position.y=-.3+Math.sin(t*.9)*.12; r.render(s,c)});
+}
+</script>
+</body>
+</html>

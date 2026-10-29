@@ -1,0 +1,135 @@
+<!doctype html>
+<!-- PROTOTYPE (throwaway): Modern Standard Arabic (current site) vs Egyptian Arabic, same sections side by side. -->
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>فصحى أم مصري؟</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800&family=Tajawal:wght@400;500;700&display=swap">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f5f0eb;--surface:#ede5dc;--ink:#14110e;--muted:#5a5550;--accent:#8a654b;--line:#d9cbbd}
+body{background:var(--bg);color:var(--ink);font-family:Tajawal,sans-serif;font-size:18px;line-height:1.8}
+.wrap{width:min(1240px,100%);margin:0 auto;padding:40px 32px 80px}
+h1,h2,h3{font-family:Cairo,sans-serif;font-weight:800;line-height:1.35}
+.top{display:flex;justify-content:space-between;align-items:end;gap:24px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.top h1{font-size:34px}
+.top p{color:var(--muted);max-width:60ch}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0;position:sticky;top:0;background:var(--bg);z-index:2;border-bottom:1px solid var(--line)}
+.cols div{padding:18px 24px;font-family:Cairo;font-weight:800;font-size:22px;color:var(--accent)}
+.cols div small{display:block;font-family:Tajawal;font-weight:500;font-size:14px;color:var(--muted)}
+section{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+section>.label{grid-column:1/-1;padding:22px 24px 0;font-size:14px;color:var(--muted);font-weight:700}
+section>div:not(.label){padding:16px 24px 28px}
+section>div:nth-child(3){border-inline-start:1px solid var(--line);background:color-mix(in srgb,var(--surface) 55%,transparent)}
+.role{color:var(--accent);font-weight:700;font-size:15px}
+.h-hero{font-size:clamp(28px,3vw,40px);margin:8px 0 12px}
+.h-sec{font-size:28px;margin-bottom:8px}
+.muted{color:var(--muted)}
+.btn{display:inline-block;margin-top:14px;margin-inline-end:8px;padding:10px 18px;background:var(--accent);color:#fff;font-weight:700;font-size:15px}
+.btn.o{background:none;color:var(--ink);border:1px solid var(--accent)}
+ul{list-style:none;display:grid;gap:10px}
+li b{font-family:Cairo;font-weight:800;color:var(--accent);display:block;font-size:17px}
+.note{margin-top:32px;padding:20px 24px;background:var(--surface);color:var(--muted);font-size:16px}
+.note b{color:var(--ink)}
+@media (max-width:800px){section,.cols{grid-template-columns:1fr}section>div:nth-child(3){border-inline-start:0;border-top:1px dashed var(--line)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div><h1>فصحى أم مصري؟</h1><p>نفس أجزاء الموقع مكتوبة بطريقتين. اقرأ الاثنين وقل لي أيهما يشبهك أكثر، أو نمزج بينهما.</p></div>
+  </div>
+  <div class="cols"><div>فصحى<small>الموجودة على الموقع الآن</small></div><div>عامية مصرية<small>اقتراح</small></div></div>
+
+  <section>
+    <div class="label">أعلى الصفحة</div>
+    <div>
+      <p class="role">محمد أبو عوف، مهندس اتصالات</p>
+      <h2 class="h-hero">أهلاً، أنا محمد. أحوّل فكرتك إلى موقع أو نظام يعمل بكفاءة.</h2>
+      <p class="muted">أصمّم وأطوّر المواقع والمتاجر الإلكترونية وأنظمة الحجز وإدارة العملاء، وأرافق المشروع من أول فكرة حتى يصل إلى عملائك، بالعربية والإنجليزية. أقيم في بورسعيد، وأعمل مع عملاء داخل مصر وخارجها.</p>
+      <span class="btn">راسلني على إنستجرام</span><span class="btn o">لينكدإن</span>
+      <p class="muted" style="margin-top:12px;font-size:15px">● أستقبل مشاريع جديدة حالياً</p>
+    </div>
+    <div>
+      <p class="role">محمد أبو عوف، مهندس اتصالات</p>
+      <h2 class="h-hero">أهلاً، أنا محمد. بحوّل فكرتك لموقع أو سيستم شغّال صح.</h2>
+      <p class="muted">بصمّم وبنفّذ مواقع ومتاجر أونلاين وأنظمة حجز وسيستمات لإدارة العملاء، وبفضل معاك من أول فكرة لحد ما المشروع يوصل لعملائك، عربي وإنجليزي. أنا من بورسعيد، وبشتغل مع عملاء من جوه مصر وبرّه.</p>
+      <span class="btn">كلّمني على إنستجرام</span><span class="btn o">لينكدإن</span>
+      <p class="muted" style="margin-top:12px;font-size:15px">● فاضي لمشاريع جديدة دلوقتي</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">قسم الأعمال</div>
+    <div><h3 class="h-sec">نماذج من أعمالي</h3><p class="muted">مشاريع نفّذتها لعملائي، والشركة التي شاركت في تأسيسها، وتجارب شخصية أتعلّم منها.</p></div>
+    <div><h3 class="h-sec">شوية من شغلي</h3><p class="muted">مشاريع عملتها لعملائي، والشركة اللي أسّستها مع شركائي، وتجارب شخصية بتعلّم منها.</p></div>
+  </section>
+
+  <section>
+    <div class="label">الخدمات</div>
+    <div>
+      <h3 class="h-sec">خدماتي</h3>
+      <ul>
+        <li><b>تطوير المواقع</b>مواقع سريعة وعصرية تجذب العملاء، وتتوسّع بسهولة كلما كبر عملك.</li>
+        <li><b>الأتمتة</b>أربط الأدوات التي تستخدمها ببعضها، فتُنجَز المهام المتكررة تلقائياً وتقلّ الأخطاء.</li>
+        <li><b>متاجر Shopify</b>متاجر جاهزة للبيع من اليوم الأول، بقوالب وتطبيقات تناسب نشاطك.</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="h-sec">بعمل إيه؟</h3>
+      <ul>
+        <li><b>تطوير المواقع</b>مواقع سريعة وشكلها حلو بتجيبلك عملاء، وبتكبر معاك كل ما شغلك يكبر.</li>
+        <li><b>الأتمتة</b>بربط الأدوات اللي بتستخدمها ببعض، فالحاجات المتكررة تتعمل لوحدها والغلط يقلّ.</li>
+        <li><b>متاجر Shopify</b>متاجر جاهزة تبيع من أول يوم، بتصميمات وتطبيقات على مقاس شغلك.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">عني</div>
+    <div>
+      <h3 class="h-sec">عني</h3>
+      <p style="font-family:Cairo;font-weight:800;font-size:22px;margin-bottom:8px">درستُ الهندسة، وعشقتُ البرمجة.</p>
+      <p class="muted">أنا مهندس اتصالات وإلكترونيات من بورسعيد. درستُ كيف تنتقل البيانات عبر الشبكات بسرعة وأمان، واليوم أوظّف هذه الخبرة في تطوير مواقع وأنظمة يعتمد عليها عملائي في عملهم اليومي.</p>
+    </div>
+    <div>
+      <h3 class="h-sec">مين أنا؟</h3>
+      <p style="font-family:Cairo;font-weight:800;font-size:22px;margin-bottom:8px">درست هندسة، وحبّيت البرمجة.</p>
+      <p class="muted">أنا مهندس اتصالات وإلكترونيات من بورسعيد. درست إزاي البيانات بتتنقل في الشبكات بسرعة وأمان، ودلوقتي بستخدم الخبرة دي في إني أعمل مواقع وسيستمات عملائي بيعتمدوا عليها في شغلهم كل يوم.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">مشروع: Arab Collective</div>
+    <div>
+      <h3 class="h-sec" style="font-size:22px">ماذا كان يحتاج العميل؟</h3>
+      <p class="muted">Arab Collective علامة أزياء مستوحاة من التراث العربي، تبيع لعملاء حول العالم. كان ينقصها أمران: مكاناً واحداً تدير منه المؤثرين وترسل لهم الهدايا من مخزون المتجر مباشرة، ومتجراً يحوّل الزوار إلى مشترين بالعربية والإنجليزية.</p>
+    </div>
+    <div>
+      <h3 class="h-sec" style="font-size:22px">العميل كان محتاج إيه؟</h3>
+      <p class="muted">Arab Collective براند هدوم مستوحى من التراث العربي، وبيبيع لناس في كل حتة في العالم. كان محتاج حاجتين: مكان واحد يدير منه الإنفلونسرز ويبعتلهم هدايا من مخزون المتجر على طول، ومتجر يخلّي اللي بيدخل يشتري، عربي وإنجليزي.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">التواصل</div>
+    <div>
+      <h3 class="h-sec">لديك فكرة مشروع؟ يسعدني أن أسمعها</h3>
+      <p class="muted">للردّ الأسرع راسلني على إنستجرام أو لينكدإن، أو اترك رسالتك هنا وسأعود إليك خلال 24 ساعة.</p>
+      <p class="muted" style="margin-top:10px">زر الإرسال: <b style="color:var(--ink)">إرسال</b> · الرسالة: <b style="color:var(--ink)">حدّثني عن مشروعك</b></p>
+    </div>
+    <div>
+      <h3 class="h-sec">عندك فكرة مشروع؟ احكيلي عنها</h3>
+      <p class="muted">لو عايز رد أسرع ابعتلي على إنستجرام أو لينكدإن، أو سيب رسالتك هنا وهرد عليك خلال 24 ساعة.</p>
+      <p class="muted" style="margin-top:10px">زر الإرسال: <b style="color:var(--ink)">ابعت</b> · الرسالة: <b style="color:var(--ink)">قولّي عايز تعمل إيه</b></p>
+    </div>
+  </section>
+
+  <div class="note">
+    <b>رأيي:</b> المصري أقرب وأدفأ لعملائك في مصر، خصوصاً إنك بتبعت اللينك في شات على إنستجرام. الفصحى أرسمية وتناسب العملاء في الخليج وأصحاب الشغل اللي بيدوّروا على مهندس. ممكن كمان نمزج: عناوين وأزرار بالمصري، وتفاصيل المشاريع بالفصحى.
+  </div>
+</div>
+</body>
+</html>
