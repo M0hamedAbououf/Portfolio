@@ -54,12 +54,12 @@ export const projects: Project[] = [
     stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase", "Shopify Admin API", "Shopify"],
     need: {
       en: "Arab Collective, an Arab-heritage streetwear brand selling worldwide, needed two things: one place to manage its influencers and send them PR gifts straight from store stock, and a store that turns visits into orders in English and Arabic.",
-      ar: "Arab Collective علامة أزياء مستوحاة من التراث العربي، تبيع لعملاء حول العالم. كانت تحتاج أمرين: مكاناً واحداً تدير منه المؤثرين وترسل لهم الهدايا من مخزون المتجر مباشرة، ومتجراً يحوّل الزوار إلى مشترين بالعربية والإنجليزية.",
+      ar: "Arab Collective علامة أزياء مستوحاة من التراث العربي، تبيع لعملاء حول العالم. كان ينقصها أمران: مكاناً واحداً تدير منه المؤثرين وترسل لهم الهدايا من مخزون المتجر مباشرة، ومتجراً يحوّل الزوار إلى مشترين بالعربية والإنجليزية.",
     },
     delivered: [],
     parts: [
       {
-        title: { en: "The influencer CRM I built", ar: "نظام إدارة المؤثرين الذي طوّرته" },
+        title: { en: "The influencer CRM I built", ar: "ما طوّرته: نظام إدارة المؤثرين" },
         items: [
           {
             en: "A roster of influencers across the Gulf, the Levant and North Africa, with their campaigns and results: revenue, clicks and return on spend.",
@@ -80,11 +80,11 @@ export const projects: Project[] = [
         ],
       },
       {
-        title: { en: "What we did on the Shopify store", ar: "ما قدّمناه في متجر Shopify" },
+        title: { en: "What we did on the Shopify store", ar: "ما قدّمناه للمتجر على Shopify" },
         items: [
           {
             en: "A conversion-focused Shopify store, built to sell from the first visit.",
-            ar: "متجر Shopify مصمَّم ليبيع من أول زيارة.",
+            ar: "متجر على Shopify هدفه الأول أن يتحوّل الزائر إلى مشترٍ من أول زيارة.",
           },
           {
             en: "A five-step Design Studio: pick the item, choose colour and size, place the print, add the design, then review.",
@@ -197,7 +197,7 @@ export const projects: Project[] = [
     year: "2026",
     summary: {
       en: "Bilingual booking platform: clients book, pay and send proof in one flow, and the team reviews every booking live.",
-      ar: "منصة حجز بالعربية والإنجليزية: يحجز العميل ويدفع ويرفع إيصال الدفع في خطوات قليلة، ويتابع الفريق كل حجز لحظة بلحظة.",
+      ar: "منصة حجز بالعربية والإنجليزية، يحجز فيها العميل ويدفع ويرفع إيصال الدفع في خطوات قليلة، ويتابع الفريق كل حجز لحظة بلحظة.",
     },
     highlight: { en: "Live", ar: "متاح الآن" },
     live: { url: "https://eldabah.com", label: "eldabah.com" },
@@ -221,7 +221,7 @@ export const projects: Project[] = [
       },
       {
         en: "Arabic-first design with an English option and light and dark themes.",
-        ar: "تصميم بالعربية أولاً مع نسخة إنجليزية، ووضعين فاتح وداكن.",
+        ar: "الموقع عربي في الأساس، مع نسخة إنجليزية ووضعين فاتح وداكن.",
       },
     ],
     engineering: [
@@ -304,7 +304,7 @@ export const projects: Project[] = [
     year: "2026",
     summary: {
       en: "A streetwear storefront concept where a live 3D scene surrounds flat product photography.",
-      ar: "فكرة لمتجر ملابس، يتحرك فيه مشهد ثلاثي الأبعاد حول صور المنتجات دون أن يغطيها.",
+      ar: "تصوّر لمتجر ملابس، يتحرك فيه مشهد ثلاثي الأبعاد حول صور المنتجات دون أن يحجبها.",
     },
     highlight: { en: "Three.js", ar: "Three.js" },
     stack: ["React", "TypeScript", "Vite", "Three.js", "Playwright"],
@@ -327,7 +327,7 @@ export const projects: Project[] = [
       },
       {
         en: "A live 3D hero that follows the pointer.",
-        ar: "واجهة ثلاثية الأبعاد تتفاعل مع حركة المؤشر.",
+        ar: "مشهد ثلاثي الأبعاد في أعلى الصفحة يتفاعل مع حركة الماوس.",
       },
     ],
     engineering: [
@@ -358,7 +358,7 @@ export const projects: Project[] = [
     stack: ["JavaScript", "HTML", "CSS", "Supabase", "Node test runner"],
     need: {
       en: "A practice project: a small store built without a framework, with logic clean enough to move to a server later.",
-      ar: "مشروع تدريبي: متجر صغير بدون أي إطار عمل، بكود منظّم يسهل نقله إلى خادم لاحقاً.",
+      ar: "مشروع للتدريب: متجر صغير مكتوب دون أي إطار عمل، بكود منظّم يسهل نقله إلى خادم لاحقاً.",
     },
     delivered: [
       {
@@ -400,7 +400,7 @@ export const projects: Project[] = [
     year: "2024",
     summary: {
       en: "Desktop media player in Python with speed control, 5-second skips and keyboard shortcuts, rebuilt with tested playback logic.",
-      ar: "مشغّل وسائط لسطح المكتب بلغة Python، فيه تحكم في السرعة وتقديم وتأخير خمس ثوانٍ واختصارات للوحة المفاتيح، ثم أعدت كتابته بمنطق تشغيل مختبَر.",
+      ar: "مشغّل فيديو وصوت للكمبيوتر بلغة Python، يتيح التحكم في السرعة والتقديم والتأخير خمس ثوانٍ، مع اختصارات للوحة المفاتيح. أعدت كتابته لاحقاً بكود مختبَر ومنظّم.",
     },
     highlight: { en: "27 tests", ar: "27 اختباراً" },
     stack: ["Python", "Tkinter", "VLC", "Pillow", "pytest"],
@@ -419,7 +419,7 @@ export const projects: Project[] = [
       },
       {
         en: "Smooth custom-drawn buttons and sliders.",
-        ar: "أزرار وشرائط تحكم مرسومة خصيصاً بحواف ناعمة.",
+        ar: "أزرار وأشرطة تحكم صمّمتها خصيصاً بحواف ناعمة.",
       },
     ],
     engineering: [
