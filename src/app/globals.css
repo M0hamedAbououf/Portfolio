@@ -31,14 +31,14 @@
 }
 
 :root {
-  --display: var(--font-display), "Oswald", sans-serif;
-  --body: var(--font-body), "Inter", system-ui, sans-serif;
+  --display: var(--font-display), "Montserrat", sans-serif;
+  --body: var(--font-body), "Lato", system-ui, sans-serif;
   --gutter: clamp(20px, 4vw, 40px);
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 :root[lang="ar"] {
-  --display: var(--font-arabic), sans-serif;
+  --display: var(--font-arabic-display), sans-serif;
   --body: var(--font-arabic), sans-serif;
 }
 
@@ -85,16 +85,18 @@ h1,
 h2,
 h3 {
   font-family: var(--display);
-  font-weight: 500;
-  line-height: 1.08;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
   text-wrap: balance;
 }
 
 :root[lang="ar"] h1,
 :root[lang="ar"] h2,
 :root[lang="ar"] h3 {
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.4;
+  letter-spacing: 0;
 }
 
 p {
@@ -228,8 +230,8 @@ textarea {
 
 .brand {
   font-family: var(--font-display), sans-serif;
-  font-weight: 500;
-  letter-spacing: 0.16em;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   font-size: 18px;
 }
 
@@ -262,7 +264,7 @@ textarea {
   border: 1px solid var(--line);
   background: transparent;
   color: var(--ink);
-  font: 500 14px var(--body);
+  font: 700 14px var(--body);
   cursor: pointer;
   transition: border-color 0.2s;
 }
@@ -272,7 +274,7 @@ textarea {
 }
 
 .lang-switch:lang(ar) {
-  font-family: var(--font-arabic), sans-serif;
+  font-family: var(--font-arabic-display), sans-serif;
 }
 
 .lang-switch:lang(en) {
@@ -296,26 +298,26 @@ textarea {
   grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
   gap: clamp(24px, 4vw, 56px);
-  min-height: calc(100svh - 76px);
+  min-height: calc(100svh - 76px - 64px);
   padding-bottom: 40px;
 }
 
 .hero-role {
   color: var(--accent);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .hero-title {
-  font-size: clamp(44px, 5.6vw, 82px);
-  line-height: 1.02;
-  text-transform: uppercase;
-  margin: 18px 0 26px;
+  font-size: clamp(40px, 4.7vw, 66px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 18px 0 24px;
 }
 
 :root[lang="ar"] .hero-title {
-  text-transform: none;
-  font-size: clamp(36px, 4.4vw, 62px);
+  letter-spacing: 0;
+  font-size: clamp(36px, 4.3vw, 58px);
   line-height: 1.35;
 }
 
@@ -366,7 +368,7 @@ textarea {
 
 .hero-proof dd {
   font-family: var(--font-display), sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 34px;
   line-height: 1.2;
   color: var(--accent);
@@ -384,7 +386,7 @@ textarea {
 
 .hero-figure {
   position: relative;
-  height: min(760px, 84svh);
+  height: min(700px, calc(100svh - 76px - 64px - 40px));
   isolation: isolate;
 }
 
@@ -433,19 +435,73 @@ textarea {
   }
 }
 
+/* ---------- Moving services banner ---------- */
+.ticker {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+  background: var(--surface);
+  direction: ltr;
+}
+
+.ticker-track {
+  display: flex;
+  flex: none;
+  animation: ticker 36s linear infinite;
+}
+
+:root[dir="rtl"] .ticker-track {
+  animation-direction: reverse;
+}
+
+.ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+.ticker-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+  padding-inline-end: 28px;
+  white-space: nowrap;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.ticker-track span::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
+
 /* ---------- Sections ---------- */
 .section {
   padding-block: clamp(80px, 11vw, 150px);
 }
 
 .section h2 {
-  font-size: clamp(34px, 4vw, 52px);
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+  font-size: clamp(32px, 3.6vw, 48px);
+  letter-spacing: -0.02em;
 }
 
 :root[lang="ar"] .section h2 {
-  text-transform: none;
   letter-spacing: 0;
 }
 
@@ -502,7 +558,7 @@ textarea {
 
 .work-row h3 {
   font-size: 27px;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.01em;
 }
 
 .work-highlight {
@@ -560,7 +616,7 @@ textarea {
 
 .service-list h3 {
   font-size: 22px;
-  letter-spacing: 0.03em;
+  letter-spacing: -0.01em;
   color: var(--accent);
 }
 
@@ -593,7 +649,7 @@ textarea {
 
 .about h3 {
   font-size: 22px;
-  letter-spacing: 0.04em;
+  letter-spacing: -0.01em;
   margin-top: 40px;
 }
 
@@ -608,7 +664,7 @@ textarea {
 
 .timeline li {
   display: grid;
-  grid-template-columns: 82px 1fr;
+  grid-template-columns: 100px 1fr;
   gap: 20px;
   padding: 18px 0;
   border-top: 1px solid var(--line);
@@ -617,7 +673,8 @@ textarea {
 .timeline-when {
   font-family: var(--font-display), sans-serif;
   color: var(--accent);
-  font-size: 18px;
+  font-size: 17px;
+  white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
 
@@ -688,7 +745,7 @@ textarea {
 
 .contact-copy h3 {
   font-size: 18px;
-  letter-spacing: 0.04em;
+  letter-spacing: -0.01em;
   margin-top: 40px;
 }
 
@@ -838,14 +895,14 @@ textarea {
 }
 
 .case-head h1 {
-  font-size: clamp(46px, 7vw, 96px);
-  text-transform: uppercase;
-  line-height: 1;
+  font-size: clamp(40px, 6vw, 80px);
+  letter-spacing: -0.025em;
+  line-height: 1.05;
   margin: 10px 0 18px;
 }
 
 :root[lang="ar"] .case-head h1 {
-  text-transform: none;
+  letter-spacing: 0;
   line-height: 1.25;
 }
 
@@ -896,7 +953,7 @@ textarea {
 .case-results strong {
   display: block;
   font-family: var(--font-display), sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   font-size: clamp(40px, 5vw, 64px);
   line-height: 1;
   color: var(--accent);
@@ -921,7 +978,7 @@ textarea {
 
 .case-body h2 {
   font-size: 22px;
-  letter-spacing: 0.04em;
+  letter-spacing: -0.01em;
   color: var(--accent);
   margin-bottom: 14px;
 }
@@ -996,10 +1053,10 @@ textarea {
   display: block;
   margin-top: 6px;
   font-family: var(--display);
-  font-weight: 500;
-  font-size: clamp(30px, 4vw, 52px);
+  font-weight: 700;
+  font-size: clamp(28px, 3.6vw, 46px);
   line-height: 1.1;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
   transition: color 0.3s;
 }
 
@@ -1028,7 +1085,7 @@ textarea {
 }
 
 :root[lang="ar"] .case-next strong {
-  text-transform: none;
+  letter-spacing: 0;
 }
 
 .case-next:hover strong {

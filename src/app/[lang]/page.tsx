@@ -70,6 +70,15 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         </div>
       </section>
 
+      {/* Two identical halves, so sliding by -50% loops without a seam. */}
+      <div className="ticker" aria-hidden="true">
+        <div className="ticker-track">
+          {[0, 1, 2, 3, 4, 5].flatMap((copy) =>
+            dict.services.items.map((service) => <span key={`${copy}-${service.name}`}>{service.name}</span>),
+          )}
+        </div>
+      </div>
+
       <section id="work" className="section wrap" aria-labelledby="work-title">
         <div className="section-head reveal">
           <h2 id="work-title">{dict.work.title}</h2>

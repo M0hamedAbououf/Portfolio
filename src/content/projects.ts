@@ -49,7 +49,7 @@ export const projects: Project[] = [
       en: "An influencer CRM that sends PR gifts straight from Shopify stock, and a Shopify store with a Design Studio where customers create their own piece.",
       ar: "نظام CRM للمؤثرين يرسل الهدايا مباشرة من مخزون Shopify، ومتجر Shopify باستوديو تصميم يتيح للعملاء تصميم قطعتهم بأنفسهم.",
     },
-    highlight: { en: "+150% conversion", ar: "‎+150% تحويل" },
+    highlight: { en: "CRM + Shopify", ar: "CRM و Shopify" },
     live: { url: "https://arabcollective.com", label: "arabcollective.com" },
     stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase", "Shopify Admin API", "Shopify"],
     need: {
@@ -110,11 +110,6 @@ export const projects: Project[] = [
         en: "Cleared Shopify's protected customer data review so gift orders can carry delivery details.",
         ar: "اجتزت مراجعة Shopify لبيانات العملاء المحمية لتحمل طلبات الهدايا بيانات التوصيل.",
       },
-    ],
-    results: [
-      { value: "+150%", label: { en: "conversion rate", ar: "معدل التحويل" } },
-      { value: "+147.5%", label: { en: "add-to-cart rate", ar: "معدل الإضافة إلى السلة" } },
-      { value: "+75.6%", label: { en: "revenue per visitor", ar: "الإيراد لكل زائر" } },
     ],
     shots: [
       { src: "/work/arab-collective/home.jpg", width: 1440, height: 900, alt: { en: "Arab Collective home page", ar: "الصفحة الرئيسية لمتجر Arab Collective" } },

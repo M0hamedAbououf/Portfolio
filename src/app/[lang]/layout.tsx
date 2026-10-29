@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Noto_Kufi_Arabic, Oswald } from "next/font/google";
+import { Cairo, Lato, Montserrat, Tajawal } from "next/font/google";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -8,9 +8,11 @@ import { getDictionary } from "@/content/dictionary";
 import { dirOf, isLocale, locales } from "@/content/locales";
 import "../globals.css";
 
-const oswald = Oswald({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-display" });
-const inter = Inter({ subsets: ["latin"], variable: "--font-body" });
-const kufi = Noto_Kufi_Arabic({ subsets: ["arabic"], weight: ["400", "500", "600", "700"], variable: "--font-arabic" });
+// Montserrat titles over Lato text; Cairo and Tajawal are their Arabic partners.
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["600", "700"], variable: "--font-display" });
+const lato = Lato({ subsets: ["latin"], weight: ["400", "700", "900"], variable: "--font-body" });
+const cairo = Cairo({ subsets: ["arabic"], weight: ["700", "800"], variable: "--font-arabic-display" });
+const tajawal = Tajawal({ subsets: ["arabic"], weight: ["400", "500", "700"], variable: "--font-arabic" });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
@@ -58,7 +60,7 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
       lang={lang}
       dir={dirOf(lang)}
       data-theme="light"
-      className={`${oswald.variable} ${inter.variable} ${kufi.variable}`}
+      className={`${montserrat.variable} ${lato.variable} ${cairo.variable} ${tajawal.variable}`}
       suppressHydrationWarning
     >
       <head>
