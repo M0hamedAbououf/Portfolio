@@ -59,7 +59,7 @@ export const projects: Project[] = [
     delivered: [],
     parts: [
       {
-        title: { en: "The influencer CRM I built", ar: "نظام CRM للمؤثرين الذي بنيته" },
+        title: { en: "The influencer CRM I built", ar: "نظام CRM للمؤثرين الذي طوّرته" },
         items: [
           {
             en: "A roster of influencers across the Gulf, the Levant and North Africa, with their campaigns and results: revenue, clicks and return on spend.",
@@ -132,7 +132,7 @@ export const projects: Project[] = [
     needTitle: { en: "Why I co-founded it", ar: "لماذا شاركت في تأسيسها" },
     need: {
       en: "I'm one of Coretex's four co-founders. We started it so a growing business can get the whole system from one team, where the people you talk to are the people who build it.",
-      ar: "أنا واحد من أربعة شركاء مؤسسين لـ Coretex. أسسناها ليحصل أي عمل نامٍ على النظام كاملاً من فريق واحد، يكون فيه من تتحدث معهم هم من يبنون مشروعك.",
+      ar: "أنا واحد من أربعة شركاء مؤسسين لـ Coretex. أسسناها ليحصل أي عمل نامٍ على النظام كاملاً من فريق واحد، يكون فيه من تتحدث معهم هم من يطوّرون مشروعك.",
     },
     delivered: [],
     parts: [
