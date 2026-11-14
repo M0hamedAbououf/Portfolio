@@ -1,8 +1,8 @@
 "use client";
 
-import { Canvas, useFrame } from "@react-three/fiber";
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
-import type { Mesh } from "three";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { Suspense, useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { TextureLoader, type Mesh } from "three";
 
 const pointer = { x: 0, y: 0 };
 
@@ -13,6 +13,63 @@ function subscribeTheme(onChange: () => void) {
 }
 
 const readAccent = () => getComputedStyle(document.documentElement).getPropertyValue("--ring").trim() || "#D7B79C";
+
+// The portrait fades out at its sides and bottom, so the canvas behind it showed the rings
+// through the suit. This invisible cut-out of the portrait sits in front of the rings and
+// writes only depth, hiding every part of a ring that passes behind the body.
+const OCCLUDER_Z = 4; // in front of the rings, whose radius is at most 3.5
+const occluderVertex = /* glsl */ `
+  varying vec2 vUv;
+  void main() {
+    vUv = uv;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+  }
+`;
+// Same fades as .hero-portrait's CSS mask: 14% at each side, the bottom 20%.
+const occluderFragment = /* glsl */ `
+  uniform sampler2D map;
+  varying vec2 vUv;
+  void main() {
+    float side = clamp(vUv.x / 0.14, 0.0, 1.0) * clamp((1.0 - vUv.x) / 0.14, 0.0, 1.0);
+    float bottom = clamp(vUv.y / 0.2, 0.0, 1.0);
+    if (texture2D(map, vUv).a * side * bottom < 0.02) discard;
+    gl_FragColor = vec4(0.0);
+  }
+`;
+
+function PortraitOccluder() {
+  const plane = useRef<Mesh>(null);
+  const map = useLoader(TextureLoader, "/me.png");
+
+  useFrame(({ camera, gl }) => {
+    const mesh = plane.current;
+    const img = gl.domElement.closest(".hero-figure")?.querySelector(".hero-portrait");
+    if (!mesh || !img) return;
+    const box = gl.domElement.getBoundingClientRect();
+    const pic = img.getBoundingClientRect();
+    if (!box.height) return;
+    const fov = "fov" in camera ? (camera.fov as number) : 30;
+    const perPx = (2 * (camera.position.z - OCCLUDER_Z) * Math.tan((fov * Math.PI) / 360)) / box.height;
+    mesh.position.set(
+      (pic.left + pic.width / 2 - (box.left + box.width / 2)) * perPx,
+      (box.top + box.height / 2 - (pic.top + pic.height / 2)) * perPx,
+      OCCLUDER_Z,
+    );
+    mesh.scale.set(pic.width * perPx, pic.height * perPx, 1);
+  });
+
+  return (
+    <mesh ref={plane} renderOrder={-1}>
+      <planeGeometry args={[1, 1]} />
+      <shaderMaterial
+        uniforms={{ map: { value: map } }}
+        vertexShader={occluderVertex}
+        fragmentShader={occluderFragment}
+        colorWrite={false}
+      />
+    </mesh>
+  );
+}
 
 function Rings({ still }: { still: boolean }) {
   const outer = useRef<Mesh>(null);
@@ -36,6 +93,9 @@ function Rings({ still }: { still: boolean }) {
       <ambientLight intensity={0.35} />
       <directionalLight position={[4, 5, 6]} intensity={1.6} color="#fff1e0" />
       <directionalLight position={[-6, -2, -3]} intensity={0.8} />
+      <Suspense fallback={null}>
+        <PortraitOccluder />
+      </Suspense>
       <mesh ref={outer}>
         <torusGeometry args={[3.1, 0.075, 32, 200]} />
         <meshStandardMaterial color={accent} metalness={0.85} roughness={0.32} />
